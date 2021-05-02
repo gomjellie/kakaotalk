@@ -86,13 +86,9 @@
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-app-region: drag;
-  display: flex;
-  height: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
   height: 2.8rem;
   background-color: white;
 }
@@ -206,6 +202,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   height: 100vh;
   background-color: antiquewhite;
 }

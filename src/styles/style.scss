@@ -9,6 +9,8 @@ body {
 
 .App {
   @include flexCenter(row);
+  user-select: none;
+
   height: 100vh;
   background-color: antiquewhite;
 }
