@@ -12,7 +12,7 @@ export default function Friend() {
       </header>
       <div className="ContentSearchBar">
         <div class="SearchFriendsWrapper">
-          <img id="search" height="75%" src={searchImg} alt=""/>
+          <img id="search" height="80%" src={searchImg} alt=""/>
           <input className="SearchFriends" placeholder="Search Friends" />
         </div>
       </div>
