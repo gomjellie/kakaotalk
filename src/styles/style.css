@@ -163,6 +163,9 @@
 .ContentRoot .ContentSearchBar .SearchFriendsWrapper .SearchFriends {
   border: none;
   outline: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   background-color: #f7f7f7;
   margin-left: 0.3rem;
   font-size: 0.8rem;
