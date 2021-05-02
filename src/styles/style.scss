@@ -1,39 +1,35 @@
+@import "./functions";
+@import "./variables";
+@import "./sidebar";
+
+body {
+  margin: 0;
+}
+
 .App {
-  text-align: center;
+  @include flexCenter(row);
+  height: 100vh;
+  background-color: antiquewhite;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.ContentRoot {
+  display: block;
+  height: 100%;
+  flex: 1;
+  background-color: lightgreen;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
+  .ContentHeader {
+    @include flexCenter(row);
+    @include draggable();
+    width: 100%;
+    height: 2.8rem;
+    background-color: cadetblue;
   }
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
 
-.App-link {
-  color: rgb(112, 76, 182);
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.ContentSearchBar {
+  width: 100%;
+  height: 2rem;
+  background-color: violet;
 }

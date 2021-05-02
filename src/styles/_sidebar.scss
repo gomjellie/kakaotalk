@@ -1,0 +1,47 @@
+
+.Sidebar {
+  // display: block;
+  @include flexCenter(column);
+  @include draggable();
+  height: 100%;
+  width: 4.2rem;
+  background-color: $brown;
+  position: sticky; // 스크롤에도 이동하지 않게
+
+  img {
+    filter: invert(70%); // opacity(.3) drop-shadow(0 0 0 white);
+
+    &.highlight {
+      filter: invert(100%);
+    }
+
+    &:hover {
+      filter: opacity(.9) invert(85%);
+    }
+  }
+
+  #personal {
+    position: absolute;
+    top: 4rem;
+  }
+
+  #chat {
+    position:absolute;
+    top: 7rem;
+  }
+
+  #etc {
+    position:absolute;
+    top: 9.5rem;
+  }
+
+  #bell {
+    position:absolute;
+    bottom: 3.5rem;
+  }
+
+  #setting {
+    position:absolute;
+    bottom: 1rem;
+  }
+}
