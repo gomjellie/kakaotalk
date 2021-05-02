@@ -10,12 +10,14 @@ app.whenReady().then(() => {
     webPreferences: {
       enableRemoteModule: true,
       preload: `${__dirname}/preload.js`
-    }
+    },
+    width: 390,
+    height: 870,
+    titleBarStyle: 'hidden',
   })
-  console.log(process.env)
   if (process.env.mode === 'dev') {
     win.loadURL('http://localhost:3000')
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
   } else {
     // win.loadURL(`file://${path.join(__dirname, '../build/index.html')}`)
     console.log(`${path.join(__dirname, '../build/index.html')}`)
