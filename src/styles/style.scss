@@ -1,6 +1,7 @@
 @import "./functions";
 @import "./variables";
 @import "./sidebar";
+@import "./friend";
 
 body {
   margin: 0;
@@ -10,26 +11,4 @@ body {
   @include flexCenter(row);
   height: 100vh;
   background-color: antiquewhite;
-}
-
-.ContentRoot {
-  display: block;
-  height: 100%;
-  flex: 1;
-  background-color: lightgreen;
-
-  .ContentHeader {
-    @include flexCenter(row);
-    @include draggable();
-    width: 100%;
-    height: 2.8rem;
-    background-color: cadetblue;
-  }
-}
-
-
-.ContentSearchBar {
-  width: 100%;
-  height: 2rem;
-  background-color: violet;
 }

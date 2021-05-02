@@ -6,6 +6,8 @@ import settingImg from './assets/setting.png';
 import chatImg from './assets/chat.png';
 import userImg from './assets/user.png';
 
+import Friend from './features/friend/Friend';
+
 function App() {
   return (
     <div className="App">
@@ -16,17 +18,7 @@ function App() {
         <img width="25%" id="bell" src={bellImg} alt=""/>
         <img width="25%" id="setting" src={settingImg} alt=""/>
       </aside>
-      <section className="ContentRoot">
-        <header className="ContentHeader">
-          
-        </header>
-        <div className="ContentSearchBar">
-
-        </div>
-        <main>
-
-        </main>
-      </section>
+      <Friend />      
     </div>
   );
 }

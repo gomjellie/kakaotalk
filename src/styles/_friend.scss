@@ -1,0 +1,40 @@
+
+.ContentRoot {
+  display: block;
+  height: 100%;
+  flex: 1;
+  background-color: lightgreen;
+
+  .ContentHeader {
+    @include flexCenter(row);
+    @include draggable();
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 2.8rem;
+    background-color: $white;
+
+    .TabName {
+      margin-left: 0.8rem;
+    }
+
+    #addFriend {
+      margin-right: 0.5rem;
+
+      filter: invert(15%);
+
+      &:hover {
+        filter: opacity(.9) invert(20%);
+      }
+    }
+  }
+
+  .ContentSearchBar {
+    width: 100%;
+    height: 2rem;
+    background-color: violet;
+  }  
+}
+
