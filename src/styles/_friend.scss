@@ -32,9 +32,35 @@
   }
 
   .ContentSearchBar {
-    width: 100%;
-    height: 2rem;
-    background-color: violet;
-  }  
+    @include flexCenter(row);
+    height: 2.5rem;
+    background-color: $white;
+
+    .SearchFriendsWrapper {
+      @include flexCenter(row);
+      justify-content: flex-start;
+      width: 90%;
+      height: 35%;
+      background-color: $gray;
+      padding: 0.25rem;
+      border-radius: 6px 6px 6px 6px;
+      
+      #search {
+        margin-left: 0.3rem;
+      }
+
+      .SearchFriends {
+        border: none;
+        outline: none;
+        background-color: $gray;
+        margin-left: 0.3rem;
+        font-size: 0.8rem;
+
+        &::placeholder {
+          color: $dimGray;
+        }
+      }
+    }
+  }
 }
 
