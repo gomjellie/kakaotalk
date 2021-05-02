@@ -34,9 +34,11 @@
     .SearchFriendsWrapper {
       @include flexCenter(row);
       justify-content: flex-start;
-      width: 90%;
+      width: 100%;
       height: 35%;
       background-color: $gray;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
       padding: 0.25rem;
       border-radius: 6px 6px 6px 6px;
       
