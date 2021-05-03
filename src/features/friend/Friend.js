@@ -6,6 +6,7 @@ import ChannelItem from './ChannelItem';
 import Divider from './Divider';
 import SectionTitle from './SectionTitle';
 import UserItem from './UserItem';
+import raloImg from '../../assets/ralo.png';
 
 export default function Friend() {
   const user = {
@@ -29,7 +30,7 @@ export default function Friend() {
       </div>
       <main className="Main">
         <SectionTitle title="My Default Profile"/>
-        <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
+        <UserItem avatar={raloImg} nickname="김찬호" stat="남탓금지, 나를믿고 팀을믿자" music="Can't beat airman"/>
         <Divider />
         <SectionTitle title="Friends with Birthdays"/>
         <UserItem nickname={user.nickname} music={user.music}/>
