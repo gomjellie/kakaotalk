@@ -205,6 +205,134 @@
   border-top: 1px solid #f1f1f1;
 }
 
+.ContentRoot main .BirthdayItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3.4rem;
+  padding: 0.2rem;
+}
+
+.ContentRoot main .BirthdayItem .AvatarWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  height: 2.72rem;
+  width: 2.72rem;
+  background-color: #e1737a;
+  border-radius: 40%;
+}
+
+.ContentRoot main .BirthdayItem .AvatarWrapper .Avatar {
+  height: 50%;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.ContentRoot main .BirthdayItem .Texts {
+  display: inline;
+  margin-left: 0.3rem;
+  color: #404040;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.ContentRoot main .BirthdayItem .Texts .NumBirthday {
+  color: #c7c7c7;
+  display: inline;
+}
+
+.ContentRoot main .ChannelItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3.4rem;
+  padding: 0.2rem;
+}
+
+.ContentRoot main .ChannelItem .AvatarWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  height: 2.72rem;
+  width: 2.72rem;
+  background-color: #fae101;
+  border-radius: 40%;
+}
+
+.ContentRoot main .ChannelItem .AvatarWrapper .CH {
+  position: absolute;
+  margin-bottom: 2px;
+  color: #fae101;
+  font-size: 0.7rem;
+  z-index: 1;
+}
+
+.ContentRoot main .ChannelItem .AvatarWrapper .Avatar {
+  height: 50%;
+  -webkit-filter: invert(0%);
+          filter: invert(0%);
+}
+
+.ContentRoot main .ChannelItem .Texts {
+  display: inline;
+  margin-left: 0.3rem;
+  color: #404040;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.ContentRoot main .ChannelItem .Texts .NumChannel {
+  color: #c7c7c7;
+  display: inline;
+}
+
 .ContentRoot main .UserItem {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -225,6 +353,7 @@
 
 .ContentRoot main .UserItem .Avatar {
   margin-left: 0.3rem;
+  margin-right: 0.3rem;
   height: 80%;
   border-radius: 40%;
 }

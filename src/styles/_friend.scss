@@ -87,7 +87,7 @@
       border-top: 1px solid $dividerGray;
     }
 
-    .UserItem {
+    .BirthdayItem {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
@@ -95,8 +95,91 @@
       height: 3.4rem;
       padding: 0.2rem;
 
+      .AvatarWrapper {
+        @include flexCenter(row);
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
+        height: 2.72rem;
+        width: 2.72rem;
+        background-color: $birthdayPink;
+        border-radius: 40%;
+
+        .Avatar {
+          height: 50%;
+          filter: invert(100%);
+        }
+      }
+
+      .Texts {
+        display: inline;
+        margin-left: 0.3rem;
+        color: $black;
+        font-weight: 700;
+        font-size: 0.8rem;
+
+        .NumBirthday {
+          color: $dimGray;
+          display: inline;
+        }
+      }
+    }
+
+    .ChannelItem {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;      
+      height: 3.4rem;
+      padding: 0.2rem;
+
+      .AvatarWrapper {
+        @include flexCenter(row);
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
+        height: 2.72rem;
+        width: 2.72rem;
+        background-color: $yellow;
+        border-radius: 40%;
+
+        .CH {
+          position: absolute;
+          margin-bottom: 2px;
+          color: $yellow;
+          font-size: 0.7rem;
+          z-index: 1;
+        }
+
+        .Avatar {
+          height: 50%;
+          filter: invert(0%);  
+        }
+      }
+
+      .Texts {
+        display: inline;
+        margin-left: 0.3rem;
+        color: $black;
+        font-weight: 700;
+        font-size: 0.8rem;
+
+        .NumChannel {
+          color: $dimGray;
+          display: inline;
+        }
+      }
+    }
+
+    .UserItem {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      height: 3.4rem;
+      padding: 0.2rem;
+
       .Avatar {
         margin-left: 0.3rem;
+        margin-right: 0.3rem;
         height: 80%;
         border-radius: 40%;
       }
