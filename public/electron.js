@@ -11,9 +11,9 @@ app.whenReady().then(() => {
       enableRemoteModule: true,
       preload: `${__dirname}/preload.js`
     },
-    width: 390,
+    width: 400,
     height: 800,
-    minWidth: 390,
+    minWidth: 400,
     minHeight: 650,
     titleBarStyle: 'hidden',
   })
