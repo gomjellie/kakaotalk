@@ -191,6 +191,20 @@
   overflow-y: auto;
 }
 
+.ContentRoot main .SectionTitle {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: #9a9a9a;
+}
+
+.ContentRoot main .Divider {
+  height: 0.1rem;
+  width: 94%;
+  margin: auto;
+  border-top: 1px solid #f1f1f1;
+}
+
 .ContentRoot main .UserItem {
   display: -webkit-box;
   display: -ms-flexbox;

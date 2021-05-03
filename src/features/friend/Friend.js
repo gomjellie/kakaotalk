@@ -1,6 +1,8 @@
 import React from 'react';
 import addFriendImg from '../../assets/addFriend.png';
 import searchImg from '../../assets/search.png';
+import Divider from './Divider';
+import SectionTitle from './SectionTitle';
 import UserItem from './UserItem';
 
 export default function Friend() {
@@ -24,10 +26,17 @@ export default function Friend() {
         </div>
       </div>
       <main className="Main">
+        <SectionTitle title="My Default Profile"/>
         <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
+        <Divider />
+        <SectionTitle title="Friends with Birthdays"/>
         <UserItem nickname={user.nickname} music={user.music}/>
         <UserItem nickname={user.nickname} stat={user.stat}/>
+        <Divider />
+        <SectionTitle title="Channel"/>
         <UserItem nickname={user.nickname} stat={user.stat} music="Justin Bieber - Lorem Ipsum Lorem Ipsum"/>
+        <Divider />
+        <SectionTitle title="Friends 389"/>
         <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
         <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
         <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>

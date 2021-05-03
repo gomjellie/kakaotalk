@@ -72,6 +72,21 @@
   main {
     height: calc(100% - 5.3rem);
     overflow-y: auto;
+
+    .SectionTitle {
+      margin-top: 0.5rem;
+      margin-left: 0.5rem;
+      font-size: 0.8rem;
+      color: $dividerTitle;
+    }
+
+    .Divider {
+      height: 0.1rem;
+      width: 94%;
+      margin: auto;
+      border-top: 1px solid $dividerGray;
+    }
+
     .UserItem {
       display: flex;
       flex-direction: row;
