@@ -31,6 +31,11 @@
           filter: invert(100%);
 }
 
+.Sidebar img.highlight:hover {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
 .Sidebar img:hover {
   -webkit-filter: opacity(0.9) invert(85%);
           filter: opacity(0.9) invert(85%);
