@@ -1,0 +1,63 @@
+
+
+.ContentRoot {
+  display: block;
+  height: 100%;
+  flex: 1;
+
+  .ContentHeader {
+    @include flexCenter(row);
+    @include draggable();
+    justify-content: space-between;
+    height: 2.8rem;
+    background-color: $white;
+    .TabName {
+      color: $black;
+      font-weight: 700;
+      margin-left: 0.8rem;
+    }
+
+    #addChat {
+      margin-right: 0.5rem;
+
+      &:hover {
+        filter: opacity(.8);
+      }
+    }
+  }
+
+  .ContentSearchBar {
+    @include flexCenter(row);
+    height: 2.5rem;
+    background-color: $white;
+
+    .SearchFriendsWrapper {
+      @include flexCenter(row);
+      justify-content: flex-start;
+      width: 100%;
+      height: 35%;
+      background-color: $gray;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      padding: 0.25rem;
+      border-radius: 6px 6px 6px 6px;
+      
+      #search {
+        margin-left: 0.3rem;
+      }
+
+      .SearchFriends {
+        border: none;
+        outline: none;
+        flex: 1;
+        background-color: $gray;
+        margin-left: 0.3rem;
+        font-size: 0.8rem;
+
+        &::placeholder {
+          color: $dimGray;
+        }
+      }
+    }
+  }
+}
