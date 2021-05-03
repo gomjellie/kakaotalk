@@ -12,7 +12,9 @@ app.whenReady().then(() => {
       preload: `${__dirname}/preload.js`
     },
     width: 390,
-    height: 870,
+    height: 800,
+    minWidth: 390,
+    minHeight: 650,
     titleBarStyle: 'hidden',
   })
   if (process.env.mode === 'dev') {
