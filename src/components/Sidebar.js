@@ -29,9 +29,9 @@ export default function Sidebar() {
   
   return (
     <aside className="Sidebar">
-      <img class={selected==='/' && "highlight"} width="33%" id="personal" src={userImg} onClick={pushFriend} alt=""/>
-      <img class={selected==='/chat' && "highlight"} width="33%" id="chat" src={chatImg} onClick={pushChat} alt=""/>
-      <img class={selected==='/etc' && "highlight"} width="30%" id="etc" src={etcImg} onClick={pushEtc} alt=""/>
+      <img className={selected==='/' ? "highlight" : ''} width="33%" id="personal" src={userImg} onClick={pushFriend} alt=""/>
+      <img className={selected==='/chat' ? "highlight" : ''} width="33%" id="chat" src={chatImg} onClick={pushChat} alt=""/>
+      <img className={selected==='/etc' ? "highlight" : ''} width="30%" id="etc" src={etcImg} onClick={pushEtc} alt=""/>
       <img width="25%" id="bell" src={bellImg} alt=""/>
       <img width="25%" id="setting" src={settingImg} alt=""/>
     </aside>
