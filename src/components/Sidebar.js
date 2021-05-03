@@ -20,7 +20,7 @@ export default function Sidebar() {
   const [selected, setSelected] = useState('/');
 
   useConstructor(() => {
-    window.api.receive('fromMain', (data) => {
+    window?.api?.receive('fromMain', (data) => {
       console.log(data);
       const [command, tab] = data.split('/');
       if (command === 'switch') {

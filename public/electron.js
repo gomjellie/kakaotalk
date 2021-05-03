@@ -1,5 +1,9 @@
 const dotenv = require('dotenv');
-const { app, BrowserWindow, globalShortcut } = require('electron')
+const {
+  app,
+  BrowserWindow,
+  Menu, MenuItem,
+} = require('electron')
 const path = require('path');
 
 dotenv.config({ path: path.join(__dirname, '../.env') })
@@ -37,17 +41,6 @@ function createWindow () {
 
 app.whenReady().then(() => {
   gWin = createWindow();
-  globalShortcut.register('Command+1', () => {
-    gWin.webContents.send('fromMain', 'switch/friend');
-  })
-
-  globalShortcut.register('Command+2', () => {
-    gWin.webContents.send('fromMain', 'switch/chat');
-  })
-
-  globalShortcut.register('Command+3', () => {
-    gWin.webContents.send('fromMain', 'switch/etc');
-  })
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
@@ -60,3 +53,33 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin')
     app.quit()
 })
+
+const menu = new Menu()
+menu.append(new MenuItem({
+  label: 'Windows',
+  submenu: [
+    {
+      label: 'friends',
+      accelerator: process.platform === 'darwin' ? 'Cmd+1' : 'Ctrl+1',
+      click: () => {
+        gWin.webContents.send('fromMain', 'switch/friend');
+      }
+    },
+    {
+      label: 'Chats',
+      accelerator: process.platform === 'darwin' ? 'Cmd+2' : 'Ctrl+2',
+      click: () => {
+        gWin.webContents.send('fromMain', 'switch/chat');
+      }
+    },
+    {
+      label: 'More',
+      accelerator: process.platform === 'darwin' ? 'Cmd+3' : 'Ctrl+3',
+      click: () => {
+        gWin.webContents.send('fromMain', 'switch/etc');
+      }
+    }
+  ]
+}))
+
+Menu.setApplicationMenu(menu);
