@@ -1,10 +1,12 @@
 const dotenv = require('dotenv');
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, globalShortcut } = require('electron')
 const path = require('path');
 
 dotenv.config({ path: path.join(__dirname, '../.env') })
 
-app.whenReady().then(() => {
+let gWin = null;
+
+function createWindow () {
   let win = new BrowserWindow({
     show: false,
     webPreferences: {
@@ -30,8 +32,31 @@ app.whenReady().then(() => {
   win.on('closed', () => {
     win = null;
   });
-})
+  return win;
+}
+
+app.whenReady().then(() => {
+  gWin = createWindow();
+  globalShortcut.register('Command+1', () => {
+    gWin.webContents.send('fromMain', 'switch/friend');
+  })
+
+  globalShortcut.register('Command+2', () => {
+    gWin.webContents.send('fromMain', 'switch/chat');
+  })
+
+  globalShortcut.register('Command+3', () => {
+    gWin.webContents.send('fromMain', 'switch/etc');
+  })
+
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      gWin = createWindow();
+    }
+  })
+});
 
 app.on('window-all-closed', () => {
-  app.quit()
+  if (process.platform !== 'darwin')
+    app.quit()
 })
