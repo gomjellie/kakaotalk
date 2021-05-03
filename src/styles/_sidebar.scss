@@ -4,7 +4,8 @@
   @include flexCenter(column);
   @include draggable();
   height: 100%;
-  width: 4.2rem;
+  // width: 4.2rem;
+  min-width: 4.2rem;
   background-color: $brown;
   position: sticky; // 스크롤에도 이동하지 않게
 
