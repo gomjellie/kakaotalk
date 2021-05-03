@@ -1,6 +1,8 @@
 
 # 카카오톡 클론 프로젝트
 
+![friends](https://user-images.githubusercontent.com/13645032/116837445-71dc2980-ac05-11eb-8084-b2b9831a6377.png)
+
 ## run
 
 ```
