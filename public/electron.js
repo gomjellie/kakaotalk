@@ -52,190 +52,122 @@ app.on("window-all-closed", () => {
 const isCupertino = process.platform === "darwin";
 
 const template = [
+  // { role: 'appMenu' }
+  ...(isCupertino ? [{
+    label: app.name,
+    submenu: [
+      { role: 'about' },
+      { type: 'separator' },
+      { role: 'services' },
+      { type: 'separator' },
+      { role: 'hide' },
+      { role: 'hideothers' },
+      { role: 'unhide' },
+      { type: 'separator' },
+      { role: 'quit' }
+    ]
+  }] : []),
+  // { role: 'fileMenu' }
   {
-    label: "Edit",
+    label: 'File',
     submenu: [
-      { role: "undo" },
-      { role: "redo" },
-      { type: "separator" },
-      { role: "cut" },
-      { role: "copy" },
-      {
-        role: "paste",
-      },
-      {
-        role: "pasteandmatchstyle",
-      },
-      {
-        role: "delete",
-      },
-      {
-        role: "selectall",
-      },
-    ],
+      isCupertino ? { role: 'close' } : { role: 'quit' }
+    ]
   },
+  // { role: 'editMenu' }
   {
-    label: "View",
+    label: 'Edit',
     submenu: [
-      {
-        label: "Reload",
-        accelerator: "CmdOrCtrl+R",
-        click(item, focusedWindow) {
-          if (focusedWindow) focusedWindow.reload();
-        },
-      },
-      {
-        label: "Toggle Developer Tools",
-        accelerator:
-          process.platform === "darwin" ? "Alt+Command+I" : "Ctrl+Shift+I",
-        click(item, focusedWindow) {
-          if (focusedWindow) focusedWindow.webContents.toggleDevTools();
-        },
-      },
-      {
-        type: "separator",
-      },
-      {
-        role: "resetzoom",
-      },
-      {
-        role: "zoomin",
-      },
-      {
-        role: "zoomout",
-      },
-      {
-        type: "separator",
-      },
-      {
-        role: "togglefullscreen",
-      },
-    ],
-  },
-  {
-    role: "window",
-    submenu: [
-      {
-        role: "minimize",
-      },
-      {
-        role: "close",
-      },
-    ],
-  },
-  {
-    role: "help",
-    submenu: [
-      {
-        label: "Learn More",
-        click() {
-          require("electron").shell.openExternal("http://electron.atom.io");
-        },
-      },
-    ],
-  },
-];
-
-if (process.platform === "darwin") {
-  template.unshift({
-    label: app.getName(),
-    submenu: [
-      {
-        role: "about",
-      },
-      {
-        type: "separator",
-      },
-      {
-        role: "services",
-        submenu: [],
-      },
-      {
-        type: "separator",
-      },
-      {
-        role: "hide",
-      },
-      {
-        role: "hideothers",
-      },
-      {
-        role: "unhide",
-      },
-      {
-        type: "separator",
-      },
-      {
-        role: "quit",
-      },
-    ],
-  });
-  // Edit menu.
-  template[1].submenu.push(
-    {
-      type: "separator",
-    },
-    {
-      label: "Speech",
-      submenu: [
+      { role: 'undo' },
+      { role: 'redo' },
+      { type: 'separator' },
+      { role: 'cut' },
+      { role: 'copy' },
+      { role: 'paste' },
+      ...(isCupertino ? [
+        { role: 'pasteAndMatchStyle' },
+        { role: 'delete' },
+        { role: 'selectAll' },
+        { type: 'separator' },
         {
-          role: "startspeaking",
+          label: 'Speech',
+          submenu: [
+            { role: 'startSpeaking' },
+            { role: 'stopSpeaking' }
+          ]
+        }
+      ] : [
+        { role: 'delete' },
+        { type: 'separator' },
+        { role: 'selectAll' }
+      ])
+    ]
+  },
+  // { role: 'viewMenu' }
+  {
+    label: 'View',
+    submenu: [
+      { role: 'reload' },
+      { role: 'forceReload' },
+      { role: 'toggleDevTools' },
+      { type: 'separator' },
+      { role: 'resetZoom' },
+      { role: 'zoomIn' },
+      { role: 'zoomOut' },
+      { type: 'separator' },
+      { role: 'togglefullscreen' }
+    ]
+  },
+  // { role: 'windowMenu' }
+  {
+    label: 'Window',
+    submenu: [
+      { role: 'minimize' },
+      { role: 'zoom' },
+      {
+        label: "friends",
+        accelerator: isCupertino ? "Cmd+1" : "Ctrl+1",
+        click: () => {
+          gWin.webContents.send("fromMain", "switch/friend");
         },
-        {
-          role: "stopspeaking",
+      },
+      {
+        label: "Chats",
+        accelerator: isCupertino ? "Cmd+2" : "Ctrl+2",
+        click: () => {
+          gWin.webContents.send("fromMain", "switch/chat");
         },
-      ],
-    }
-  );
-  // Window menu.
-  template[3].submenu = [
-    {
-      label: "Close",
-      accelerator: "CmdOrCtrl+W",
-      role: "close",
-    },
-    {
-      label: "Minimize",
-      accelerator: "CmdOrCtrl+M",
-      role: "minimize",
-    },
-    {
-      label: "Zoom",
-      role: "zoom",
-    },
-    {
-      type: "separator",
-    },
-    {
-      label: "Bring All to Front",
-      role: "front",
-    },
-    {
-      label: "friends",
-      accelerator: isCupertino ? "Cmd+1" : "Ctrl+1",
-      click: () => {
-        gWin.webContents.send("fromMain", "switch/friend");
       },
-    },
-    {
-      label: "Chats",
-      accelerator: isCupertino ? "Cmd+2" : "Ctrl+2",
-      click: () => {
-        gWin.webContents.send("fromMain", "switch/chat");
+      {
+        label: "More",
+        accelerator: isCupertino ? "Cmd+3" : "Ctrl+3",
+        click: () => {
+          gWin.webContents.send("fromMain", "switch/etc");
+        },
       },
-    },
-    {
-      label: "More",
-      accelerator: isCupertino ? "Cmd+3" : "Ctrl+3",
-      click: () => {
-        gWin.webContents.send("fromMain", "switch/etc");
-      },
-    },
-    {
-      role: "close",
-    },
-  ];
-}
+      ...(isCupertino ? [
+        { type: 'separator' },
+        { role: 'front' },
+        { type: 'separator' },
+        { role: 'window' }
+      ] : [
+        { role: 'close' }
+      ])
+    ]
+  },
+  {
+    role: 'help',
+    submenu: [
+      {
+        label: 'Github Repository',
+        click: async () => {
+          const { shell } = require('electron')
+          await shell.openExternal('https://github.com/gomjellie/kakaotalk')
+        }
+      }
+    ]
+  }
+]
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);
