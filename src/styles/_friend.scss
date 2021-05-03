@@ -19,7 +19,7 @@
     background-color: $white;
     .TabName {
       color: $black;
-      font-weight: 800;
+      font-weight: 700;
       margin-left: 0.8rem;
     }
 
@@ -76,7 +76,7 @@
     .SectionTitle {
       margin-top: 0.5rem;
       margin-left: 0.5rem;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: $dividerTitle;
     }
 
@@ -128,10 +128,10 @@
           border: 0.12rem solid $melon;
           border-radius: 1rem;
           padding: 0.2rem; // 0.4rem;
-          
+
           .Music {
             color: $black;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             @include textEllipse();
             color: $black;
           }
