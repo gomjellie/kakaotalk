@@ -1,6 +1,5 @@
 import React from 'react';
 import cakeImg from '../../assets/birthday-cake.png';
-import chatImg from '../../assets/chat.png';
 
 export default function BirthdayItem({numBirthday}) {
   return (
