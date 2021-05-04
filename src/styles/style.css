@@ -410,7 +410,7 @@
   color: #404040;
 }
 
-.ContentRoot {
+.ChatContainer {
   display: block;
   height: 100%;
   -webkit-box-flex: 1;
@@ -418,7 +418,7 @@
           flex: 1;
 }
 
-.ContentRoot .ContentHeader {
+.ChatContainer .ChatHeader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -441,22 +441,22 @@
   background-color: white;
 }
 
-.ContentRoot .ContentHeader .TabName {
+.ChatContainer .ChatHeader .HeaderTitle {
   color: #404040;
   font-weight: 700;
   margin-left: 0.8rem;
 }
 
-.ContentRoot .ContentHeader #addChat {
+.ChatContainer .ChatHeader #addChat {
   margin-right: 0.5rem;
 }
 
-.ContentRoot .ContentHeader #addChat:hover {
+.ChatContainer .ChatHeader #addChat:hover {
   -webkit-filter: opacity(0.8);
           filter: opacity(0.8);
 }
 
-.ContentRoot .ContentSearchBar {
+.ChatContainer .ChatSearchBar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -475,7 +475,7 @@
   background-color: white;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper {
+.ChatContainer .ChatSearchBar .SearchFriendsWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -502,11 +502,11 @@
   border-radius: 6px 6px 6px 6px;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper #search {
+.ChatContainer .ChatSearchBar .SearchFriendsWrapper #search {
   margin-left: 0.3rem;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper .SearchFriends {
+.ChatContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends {
   border: none;
   outline: none;
   -webkit-box-flex: 1;
@@ -517,25 +517,105 @@
   font-size: 0.8rem;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper .SearchFriends::-webkit-input-placeholder {
+.ChatContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends::-webkit-input-placeholder {
   color: #c7c7c7;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper .SearchFriends:-ms-input-placeholder {
+.ChatContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends:-ms-input-placeholder {
   color: #c7c7c7;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper .SearchFriends::-ms-input-placeholder {
+.ChatContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends::-ms-input-placeholder {
   color: #c7c7c7;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper .SearchFriends::placeholder {
+.ChatContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends::placeholder {
   color: #c7c7c7;
+}
+
+.ChatContainer main.Chat {
+  height: calc(100% - 5.3rem);
+  overflow-y: auto;
+}
+
+.ChatContainer main.Chat .ChatItem {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  -ms-grid-columns: 3rem 1fr 4.2rem;
+      grid-template-columns: 3rem 1fr 4.2rem;
+  height: 3.5rem;
+}
+
+.ChatContainer main.Chat .ChatItem:hover {
+  background-color: #f7f7f7;
+}
+
+.ChatContainer main.Chat .ChatItem .AvatarWarpper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ChatContainer main.Chat .ChatItem .AvatarWarpper .Avatar {
+  height: 2.8rem;
+  border-radius: 40%;
+}
+
+.ChatContainer main.Chat .ChatItem .Left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  padding-left: 0.8rem;
+}
+
+.ChatContainer main.Chat .ChatItem .Left .Title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  padding-top: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #404040;
+}
+
+.ChatContainer main.Chat .ChatItem .Left .Message {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #777777;
+  white-space: pre-line;
+}
+
+.ChatContainer main.Chat .ChatItem .Right {
+  background-color: lightgreen;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .App {
