@@ -10,7 +10,6 @@
     @include draggable();
     justify-content: space-between;
     height: 2.8rem;
-    background-color: $white;
     .HeaderTitle {
       color: $black;
       font-weight: 700;
@@ -29,7 +28,6 @@
   .ChatSearchBar {
     @include flexCenter(row);
     height: 2.5rem;
-    background-color: $white;
 
     .SearchFriendsWrapper {
       @include flexCenter(row);
@@ -119,7 +117,6 @@
         justify-content: flex-start;
         align-items:flex-end;
         height: 100%;
-        // background-color: lightgreen;
 
         .CurrentTime {
           font-size: 0.7rem;
@@ -127,7 +124,9 @@
           color: $dimGray;
         }
 
-
+        .NumUnread {
+          margin-top: 0.4rem;
+        }
       }
     }
   }

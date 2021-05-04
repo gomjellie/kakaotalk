@@ -438,7 +438,6 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 2.8rem;
-  background-color: white;
 }
 
 .ChatContainer .ChatHeader .HeaderTitle {
@@ -472,7 +471,6 @@
       -ms-flex-direction: row;
           flex-direction: row;
   height: 2.5rem;
-  background-color: white;
 }
 
 .ChatContainer .ChatSearchBar .SearchFriendsWrapper {
@@ -630,6 +628,19 @@
   font-size: 0.7rem;
   padding-top: 0.3rem;
   color: #c7c7c7;
+}
+
+.ChatContainer main.Chat .ChatItem .Right .NumUnread {
+  margin-top: 0.4rem;
+}
+
+.Badge {
+  background-color: #fd5b49;
+  padding: 0.1rem 0.4rem 0.2rem 0.4rem;
+  border-radius: 1rem;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 500;
 }
 
 body {

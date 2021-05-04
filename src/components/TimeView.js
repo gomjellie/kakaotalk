@@ -1,10 +1,16 @@
 import React from 'react';
 
+/**
+ * 
+ * @param {String|Date} datetime
+ * @param {String} className
+ * @returns 
+ */
 export default function TimeView({datetime, className}) {
   const now = new Date();
 
   if (typeof(datetime) === 'string') {
-    datetime = new Date(datetime);
+    datetime = new Date(datetime.replace(/-/g, "/"));
   }
 
   const diff = now - datetime;

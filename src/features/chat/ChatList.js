@@ -14,11 +14,13 @@ export default function ChatList() {
         avatar={duhanJpeg}
         message="4 딸라...!"
         currentTime="2021-5-4 12:52:00"
+        numUnread={28}
       />
       <ChatItem
         title="[공고3]SW 개발자 취업&이직 공고방"
         message="안녕하세요! :D\n 공지사항 필독 부탁드립니다!\n\n #공지사항 미준수 시 강퇴 #"
         currentTime="2021-5-4 09:15:00"
+        numUnread={115}
       />
       <ChatItem
         title="카카오페이"
