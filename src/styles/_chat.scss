@@ -1,0 +1,133 @@
+
+
+.ChatContainer {
+  display: block;
+  height: 100%;
+  flex: 1;
+
+  .ChatHeader {
+    @include flexCenter(row);
+    @include draggable();
+    justify-content: space-between;
+    height: 2.8rem;
+    .HeaderTitle {
+      color: $black;
+      font-weight: 700;
+      margin-left: 0.8rem;
+    }
+
+    #addChat {
+      margin-right: 0.5rem;
+
+      &:hover {
+        filter: opacity(.8);
+      }
+    }
+  }
+
+  .ChatSearchBar {
+    @include flexCenter(row);
+    height: 2.5rem;
+
+    .SearchFriendsWrapper {
+      @include flexCenter(row);
+      justify-content: flex-start;
+      width: 100%;
+      height: 35%;
+      background-color: $gray;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      padding: 0.25rem;
+      border-radius: 6px 6px 6px 6px;
+      
+      #search {
+        margin-left: 0.3rem;
+      }
+
+      .SearchFriends {
+        border: none;
+        outline: none;
+        flex: 1;
+        background-color: $gray;
+        margin-left: 0.3rem;
+        font-size: 0.8rem;
+
+        &::placeholder {
+          color: $dimGray;
+        }
+      }
+    }
+  }
+
+  main.Chat {
+    height: calc(100% - 5.3rem);
+    overflow-y: auto;
+
+    .ChatItem {
+      display: grid;
+      align-items: center;
+      padding: 0.5rem 1rem 0.5rem 0.5rem;
+      grid-template-columns: 3rem 1fr 4.2rem;
+      height: 3.5rem;
+      
+      &:hover {
+        background-color: $gray;
+      }
+
+      .AvatarWarpper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .Avatar {
+          height: 2.8rem;
+          border-radius: 40%;
+        }
+      }
+
+      .Left {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding-left: 0.8rem;
+        
+        .Title {
+          @include lineLimit(1);
+          padding-top: 0.3rem;
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: $black;
+        }
+
+        .Message {
+          @include defaultFonts();
+          @include lineLimit(2);
+          margin-top: 0.2rem;
+          font-size: 0.7rem;
+          font-weight: 400;
+          color: $thickGray;
+          
+          white-space: pre-line;
+        }
+      }
+
+      .Right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:flex-end;
+        height: 100%;
+
+        .CurrentTime {
+          font-size: 0.7rem;
+          padding-top: 0.3rem;
+          color: $dimGray;
+        }
+
+        .NumUnread {
+          margin-top: 0.4rem;
+        }
+      }
+    }
+  }
+}

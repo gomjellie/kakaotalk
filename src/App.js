@@ -1,24 +1,27 @@
 import React from 'react';
 import './styles/style.css';
-import bellImg from './assets/bell.png';
-import etcImg from './assets/etc.png';
-import settingImg from './assets/setting.png';
-import chatImg from './assets/chat.png';
-import userImg from './assets/user.png';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 import Friend from './features/friend/Friend';
+import Chat from './features/chat/Chat';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
     <div className="App">
-      <aside className="Sidebar">
-        <img class="highlight" width="33%" id="personal" src={userImg} alt=""/>
-        <img width="33%" id="chat" src={chatImg} alt=""/>
-        <img width="30%" id="etc" src={etcImg} alt=""/>
-        <img width="25%" id="bell" src={bellImg} alt=""/>
-        <img width="25%" id="setting" src={settingImg} alt=""/>
-      </aside>
-      <Friend />      
+      <Router>
+        <Sidebar />
+        <Switch>
+          <Route exact path="/" component={Friend} />
+          <Route exact path="/friend" component={Friend} />
+          <Route exact path="/chat" component={Chat} />
+        </Switch>
+      </Router>
     </div>
   );
 }
