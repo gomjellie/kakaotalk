@@ -1,12 +1,12 @@
 import React from 'react';
 import addChatImg from '../../assets/addChat.png';
 import searchImg from '../../assets/search.png';
-import ChatList from './ChatList';
+import ChatRoomList from './ChatRoomList';
 
-export default function Chat() {
+export default function ChatTab() {
   return (
-    <section className="ChatContainer">
-      <header className="ChatHeader">
+    <section className="ChatTabContainer">
+      <header className="ChatTabHeader">
         <div className="HeaderTitle">Chats</div>
         <img id="addChat" height="70%" src={addChatImg} alt=""/>
       </header>
@@ -17,7 +17,7 @@ export default function Chat() {
         </div>
       </div>
       <main className="Chat">
-        <ChatList />
+        <ChatRoomList />
       </main>
     </section>
   )

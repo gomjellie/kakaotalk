@@ -1,11 +1,11 @@
 
 
-.ChatContainer {
+.ChatTabContainer {
   display: block;
   height: 100%;
   flex: 1;
 
-  .ChatHeader {
+  .ChatTabHeader {
     @include flexCenter(row);
     @include draggable();
     justify-content: space-between;
@@ -63,7 +63,7 @@
     height: calc(100% - 5.3rem);
     overflow-y: auto;
 
-    .ChatItem {
+    .ChatRoomItem {
       display: grid;
       align-items: center;
       padding: 0.5rem 1rem 0.5rem 0.5rem;

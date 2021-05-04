@@ -66,7 +66,7 @@
   bottom: 1rem;
 }
 
-.ContentRoot {
+.FriendTabContainer {
   display: block;
   height: 100%;
   -webkit-box-flex: 1;
@@ -74,7 +74,7 @@
           flex: 1;
 }
 
-.ContentRoot .ContentHeader {
+.FriendTabContainer .FriendTabHeader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,24 +97,24 @@
   background-color: white;
 }
 
-.ContentRoot .ContentHeader .TabName {
+.FriendTabContainer .FriendTabHeader .HeaderTitle {
   color: #404040;
   font-weight: 700;
   margin-left: 0.8rem;
 }
 
-.ContentRoot .ContentHeader #addFriend {
+.FriendTabContainer .FriendTabHeader #addFriend {
   margin-right: 0.5rem;
   -webkit-filter: invert(15%);
           filter: invert(15%);
 }
 
-.ContentRoot .ContentHeader #addFriend:hover {
+.FriendTabContainer .FriendTabHeader #addFriend:hover {
   -webkit-filter: opacity(0.9) invert(20%);
           filter: opacity(0.9) invert(20%);
 }
 
-.ContentRoot .ContentSearchBar {
+.FriendTabContainer .ContentSearchBar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,7 +133,7 @@
   background-color: white;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper {
+.FriendTabContainer .ContentSearchBar .SearchFriendsWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -160,11 +160,11 @@
   border-radius: 6px 6px 6px 6px;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper #search {
+.FriendTabContainer .ContentSearchBar .SearchFriendsWrapper #search {
   margin-left: 0.3rem;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper .SearchFriends {
+.FriendTabContainer .ContentSearchBar .SearchFriendsWrapper .SearchFriends {
   border: none;
   outline: none;
   -webkit-box-flex: 1;
@@ -175,42 +175,42 @@
   font-size: 0.8rem;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper .SearchFriends::-webkit-input-placeholder {
+.FriendTabContainer .ContentSearchBar .SearchFriendsWrapper .SearchFriends::-webkit-input-placeholder {
   color: #c7c7c7;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper .SearchFriends:-ms-input-placeholder {
+.FriendTabContainer .ContentSearchBar .SearchFriendsWrapper .SearchFriends:-ms-input-placeholder {
   color: #c7c7c7;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper .SearchFriends::-ms-input-placeholder {
+.FriendTabContainer .ContentSearchBar .SearchFriendsWrapper .SearchFriends::-ms-input-placeholder {
   color: #c7c7c7;
 }
 
-.ContentRoot .ContentSearchBar .SearchFriendsWrapper .SearchFriends::placeholder {
+.FriendTabContainer .ContentSearchBar .SearchFriendsWrapper .SearchFriends::placeholder {
   color: #c7c7c7;
 }
 
-.ContentRoot main {
+.FriendTabContainer main {
   height: calc(100% - 5.3rem);
   overflow-y: auto;
 }
 
-.ContentRoot main .SectionTitle {
+.FriendTabContainer main .SectionTitle {
   margin-top: 0.5rem;
   margin-left: 0.5rem;
   font-size: 0.75rem;
   color: #9a9a9a;
 }
 
-.ContentRoot main .Divider {
+.FriendTabContainer main .Divider {
   height: 0.1rem;
   width: 94%;
   margin: auto;
   border-top: 1px solid #f1f1f1;
 }
 
-.ContentRoot main .BirthdayItem {
+.FriendTabContainer main .BirthdayItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,7 +228,7 @@
   padding: 0.2rem;
 }
 
-.ContentRoot main .BirthdayItem .AvatarWrapper {
+.FriendTabContainer main .BirthdayItem .AvatarWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,13 +251,13 @@
   border-radius: 40%;
 }
 
-.ContentRoot main .BirthdayItem .AvatarWrapper .Avatar {
+.FriendTabContainer main .BirthdayItem .AvatarWrapper .Avatar {
   height: 50%;
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
 
-.ContentRoot main .BirthdayItem .Texts {
+.FriendTabContainer main .BirthdayItem .Texts {
   display: inline;
   margin-left: 0.3rem;
   color: #404040;
@@ -265,12 +265,12 @@
   font-size: 0.8rem;
 }
 
-.ContentRoot main .BirthdayItem .Texts .NumBirthday {
+.FriendTabContainer main .BirthdayItem .Texts .NumBirthday {
   color: #c7c7c7;
   display: inline;
 }
 
-.ContentRoot main .ChannelItem {
+.FriendTabContainer main .ChannelItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -288,7 +288,7 @@
   padding: 0.2rem;
 }
 
-.ContentRoot main .ChannelItem .AvatarWrapper {
+.FriendTabContainer main .ChannelItem .AvatarWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -311,7 +311,7 @@
   border-radius: 40%;
 }
 
-.ContentRoot main .ChannelItem .AvatarWrapper .CH {
+.FriendTabContainer main .ChannelItem .AvatarWrapper .CH {
   position: absolute;
   margin-bottom: 2px;
   color: #fae101;
@@ -319,13 +319,13 @@
   z-index: 1;
 }
 
-.ContentRoot main .ChannelItem .AvatarWrapper .Avatar {
+.FriendTabContainer main .ChannelItem .AvatarWrapper .Avatar {
   height: 50%;
   -webkit-filter: invert(0%);
           filter: invert(0%);
 }
 
-.ContentRoot main .ChannelItem .Texts {
+.FriendTabContainer main .ChannelItem .Texts {
   display: inline;
   margin-left: 0.3rem;
   color: #404040;
@@ -333,12 +333,12 @@
   font-size: 0.8rem;
 }
 
-.ContentRoot main .ChannelItem .Texts .NumChannel {
+.FriendTabContainer main .ChannelItem .Texts .NumChannel {
   color: #c7c7c7;
   display: inline;
 }
 
-.ContentRoot main .UserItem {
+.FriendTabContainer main .UserItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -356,14 +356,14 @@
   padding: 0.2rem;
 }
 
-.ContentRoot main .UserItem .Avatar {
+.FriendTabContainer main .UserItem .Avatar {
   margin-left: 0.3rem;
   margin-right: 0.3rem;
   height: 80%;
   border-radius: 40%;
 }
 
-.ContentRoot main .UserItem .Infos {
+.FriendTabContainer main .UserItem .Infos {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -382,25 +382,25 @@
   padding: 0 0.4rem;
 }
 
-.ContentRoot main .UserItem .Infos .LeftInfo .NickName {
+.FriendTabContainer main .UserItem .Infos .LeftInfo .NickName {
   color: #404040;
   font-weight: bold;
   font-size: 0.8rem;
 }
 
-.ContentRoot main .UserItem .Infos .LeftInfo .StatMessage {
+.FriendTabContainer main .UserItem .Infos .LeftInfo .StatMessage {
   font-size: 0.7rem;
   color: #c7c7c7;
 }
 
-.ContentRoot main .UserItem .Infos .RightInfo {
+.FriendTabContainer main .UserItem .Infos .RightInfo {
   max-width: 50%;
   border: 0.12rem solid #9ae7b0;
   border-radius: 1rem;
   padding: 0.2rem;
 }
 
-.ContentRoot main .UserItem .Infos .RightInfo .Music {
+.FriendTabContainer main .UserItem .Infos .RightInfo .Music {
   color: #404040;
   font-size: 0.7rem;
   width: 100%;
@@ -410,7 +410,7 @@
   color: #404040;
 }
 
-.ChatContainer {
+.ChatTabContainer {
   display: block;
   height: 100%;
   -webkit-box-flex: 1;
@@ -418,7 +418,7 @@
           flex: 1;
 }
 
-.ChatContainer .ChatHeader {
+.ChatTabContainer .ChatTabHeader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -440,22 +440,22 @@
   height: 2.8rem;
 }
 
-.ChatContainer .ChatHeader .HeaderTitle {
+.ChatTabContainer .ChatTabHeader .HeaderTitle {
   color: #404040;
   font-weight: 700;
   margin-left: 0.8rem;
 }
 
-.ChatContainer .ChatHeader #addChat {
+.ChatTabContainer .ChatTabHeader #addChat {
   margin-right: 0.5rem;
 }
 
-.ChatContainer .ChatHeader #addChat:hover {
+.ChatTabContainer .ChatTabHeader #addChat:hover {
   -webkit-filter: opacity(0.8);
           filter: opacity(0.8);
 }
 
-.ChatContainer .ChatSearchBar {
+.ChatTabContainer .ChatSearchBar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -473,7 +473,7 @@
   height: 2.5rem;
 }
 
-.ChatContainer .ChatSearchBar .SearchFriendsWrapper {
+.ChatTabContainer .ChatSearchBar .SearchFriendsWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -500,11 +500,11 @@
   border-radius: 6px 6px 6px 6px;
 }
 
-.ChatContainer .ChatSearchBar .SearchFriendsWrapper #search {
+.ChatTabContainer .ChatSearchBar .SearchFriendsWrapper #search {
   margin-left: 0.3rem;
 }
 
-.ChatContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends {
+.ChatTabContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends {
   border: none;
   outline: none;
   -webkit-box-flex: 1;
@@ -515,28 +515,28 @@
   font-size: 0.8rem;
 }
 
-.ChatContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends::-webkit-input-placeholder {
+.ChatTabContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends::-webkit-input-placeholder {
   color: #c7c7c7;
 }
 
-.ChatContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends:-ms-input-placeholder {
+.ChatTabContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends:-ms-input-placeholder {
   color: #c7c7c7;
 }
 
-.ChatContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends::-ms-input-placeholder {
+.ChatTabContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends::-ms-input-placeholder {
   color: #c7c7c7;
 }
 
-.ChatContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends::placeholder {
+.ChatTabContainer .ChatSearchBar .SearchFriendsWrapper .SearchFriends::placeholder {
   color: #c7c7c7;
 }
 
-.ChatContainer main.Chat {
+.ChatTabContainer main.Chat {
   height: calc(100% - 5.3rem);
   overflow-y: auto;
 }
 
-.ChatContainer main.Chat .ChatItem {
+.ChatTabContainer main.Chat .ChatRoomItem {
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -548,11 +548,11 @@
   height: 3.5rem;
 }
 
-.ChatContainer main.Chat .ChatItem:hover {
+.ChatTabContainer main.Chat .ChatRoomItem:hover {
   background-color: #f7f7f7;
 }
 
-.ChatContainer main.Chat .ChatItem .AvatarWarpper {
+.ChatTabContainer main.Chat .ChatRoomItem .AvatarWarpper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -564,12 +564,12 @@
           justify-content: center;
 }
 
-.ChatContainer main.Chat .ChatItem .AvatarWarpper .Avatar {
+.ChatTabContainer main.Chat .ChatRoomItem .AvatarWarpper .Avatar {
   height: 2.8rem;
   border-radius: 40%;
 }
 
-.ChatContainer main.Chat .ChatItem .Left {
+.ChatTabContainer main.Chat .ChatRoomItem .Left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -581,7 +581,7 @@
   padding-left: 0.8rem;
 }
 
-.ChatContainer main.Chat .ChatItem .Left .Title {
+.ChatTabContainer main.Chat .ChatRoomItem .Left .Title {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -593,7 +593,7 @@
   color: #404040;
 }
 
-.ChatContainer main.Chat .ChatItem .Left .Message {
+.ChatTabContainer main.Chat .ChatRoomItem .Left .Message {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -607,7 +607,7 @@
   white-space: pre-line;
 }
 
-.ChatContainer main.Chat .ChatItem .Right {
+.ChatTabContainer main.Chat .ChatRoomItem .Right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -624,13 +624,13 @@
   height: 100%;
 }
 
-.ChatContainer main.Chat .ChatItem .Right .CurrentTime {
+.ChatTabContainer main.Chat .ChatRoomItem .Right .CurrentTime {
   font-size: 0.7rem;
   padding-top: 0.3rem;
   color: #c7c7c7;
 }
 
-.ChatContainer main.Chat .ChatItem .Right .NumUnread {
+.ChatTabContainer main.Chat .ChatRoomItem .Right .NumUnread {
   margin-top: 0.4rem;
 }
 

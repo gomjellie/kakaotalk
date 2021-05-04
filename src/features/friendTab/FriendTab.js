@@ -16,11 +16,10 @@ export default function Friend() {
   };
 
   return (
-    <section className="ContentRoot">
-      <header className="ContentHeader">
-        <div className="TabName">Friends</div>
+    <section className="FriendTabContainer">
+      <header className="FriendTabHeader">
+        <div className="HeaderTitle">Friends</div>
         <img id="addFriend" height="65%" src={addFriendImg} alt=""/>
-        
       </header>
       <div className="ContentSearchBar">
         <div className="SearchFriendsWrapper">

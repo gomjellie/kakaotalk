@@ -10,7 +10,7 @@ function Badge({num}) {
     </div>
   )
 }
-export default function ChatItem({avatar, title, message, currentTime, numUnread}) {
+export default function ChatRoomItem({avatar, title, message, currentTime, numUnread}) {
 
   const messageFilter = useCallback((msg) => {
     if (msg === undefined) return undefined;
@@ -18,7 +18,7 @@ export default function ChatItem({avatar, title, message, currentTime, numUnread
   }, []);
 
   return (
-    <div className="ChatItem">
+    <div className="ChatRoomItem">
       <div className="AvatarWarpper">
         <img className="Avatar" src={avatar || defaultAvatarImg} alt="" />
       </div>
@@ -43,7 +43,7 @@ export default function ChatItem({avatar, title, message, currentTime, numUnread
   )
 }
 
-ChatItem.propTypes = {
+ChatRoomItem.propTypes = {
   avatar: PropTypes.any,
   title: PropTypes.string,
   message: PropTypes.string,

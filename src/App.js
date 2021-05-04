@@ -7,9 +7,10 @@ import {
   Route,
 } from "react-router-dom";
 
-import Friend from './features/friend/Friend';
-import Chat from './features/chat/Chat';
 import Sidebar from './components/Sidebar';
+import FriendTab from './features/friendTab/FriendTab';
+import ChatTab from './features/chatTab/ChatTab';
+import MoreTab from './features/moreTab/MoreTab';
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
       <Router>
         <Sidebar />
         <Switch>
-          <Route exact path="/" component={Friend} />
-          <Route exact path="/friend" component={Friend} />
-          <Route exact path="/chat" component={Chat} />
+          <Route exact path="/" component={FriendTab} />
+          <Route exact path="/friend" component={FriendTab} />
+          <Route exact path="/chat" component={ChatTab} />
+          <Route exact path="/more" component={MoreTab} />
         </Switch>
       </Router>
     </div>

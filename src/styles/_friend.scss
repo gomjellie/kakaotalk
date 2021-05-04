@@ -6,18 +6,18 @@
   text-overflow: ellipsis;
 }
 
-.ContentRoot {
+.FriendTabContainer {
   display: block;
   height: 100%;
   flex: 1;
 
-  .ContentHeader {
+  .FriendTabHeader {
     @include flexCenter(row);
     @include draggable();
     justify-content: space-between;
     height: 2.8rem;
     background-color: $white;
-    .TabName {
+    .HeaderTitle {
       color: $black;
       font-weight: 700;
       margin-left: 0.8rem;
