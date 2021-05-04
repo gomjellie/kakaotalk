@@ -108,18 +108,26 @@
           font-size: 0.7rem;
           font-weight: 400;
           color: $thickGray;
-          // overflow: hidden;
-          // text-overflow: ellipsis;
-          // display: -webkit-box;
-          // -webkit-line-clamp: 2;
-          // -webkit-box-orient: vertical;
           
           white-space: pre-line;
         }
       }
 
       .Right {
-        background-color: lightgreen;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:flex-end;
+        height: 100%;
+        // background-color: lightgreen;
+
+        .CurrentTime {
+          font-size: 0.7rem;
+          padding-top: 0.3rem;
+          color: $dimGray;
+        }
+
+
       }
     }
   }
