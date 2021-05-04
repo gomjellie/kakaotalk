@@ -16,7 +16,7 @@ function createWindow() {
     width: 400,
     height: 800,
     minWidth: 400,
-    minHeight: 650,
+    minHeight: 660,
     titleBarStyle: "hidden",
   });
   if (process.env.mode === "dev") {
