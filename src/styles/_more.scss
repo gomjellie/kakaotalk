@@ -1,0 +1,144 @@
+
+
+.MoreTabContainer {
+  display: block;
+  height: 100%;
+  flex: 1;
+
+  .MoreTabHeader {
+    @include flexCenter(row);
+    @include draggable();
+    justify-content: space-between;
+    height: 2.8rem;
+    .HeaderTitle {
+      color: $black;
+      font-weight: 700;
+      margin-left: 0.8rem;
+    }
+  }
+
+  main {
+    height: calc(100% - 3.8rem);
+    // background-color: lightcoral;
+    .Wallet {
+      display: grid;
+      grid-template-rows: 1fr 2.3rem;
+      margin: 0.8rem;
+      height: 7rem;
+      background-color: rgb(250, 250, 250);
+      border: 0.1rem solid $dividerGray;
+      border-radius: 0.4rem;
+
+      .Top {
+        display: grid;
+        grid-template-columns: 1fr 2.4rem;
+        align-items: center;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+
+        .Left {
+          .Name {
+            color: $black;
+          }
+          .Email {
+            padding-top: 0.2rem;
+            color: $thickGray;
+            font-size: 0.7rem;
+          }
+        }
+
+        .ProtectIcon {
+          display: flex;
+          align-items: center;
+          height: 100%;
+        }
+      }
+
+      .Subscription {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 2rem;
+        border-top: 0.1rem solid $dividerGray;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+
+        &:hover {
+          background-color: $gray;
+        }
+        .Text {
+          font-size: 0.8rem;
+        }
+
+        .BTIcon {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          height: 100%;
+          width: 100%;
+
+          img {
+            display: block;
+            height: 50%;
+          }
+
+        }
+      }
+    }
+  }
+
+  .Icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 3.3rem;
+    gap: 1rem;
+    margin: 2rem 1rem;
+    
+    .Icon {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      // border: 1px solid black;
+      img {
+        width: 2rem;
+      }
+
+      .Text {
+        font-size: 0.75rem;
+        color: $dividerTitle;
+      }
+    }
+  }
+
+  .Divider {
+    height: 0.1rem;
+    margin: 3rem 1rem 1rem;
+    border-top: 1px solid $dividerGray;
+  }
+
+  .VersionInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1rem;
+
+    .KakaoTalkInfo {
+      display: flex;
+      align-items: center;
+      margin-left: 0.5rem;
+      img {
+        width: 1rem;
+        margin-right: 0.5rem;
+      }
+
+      font-size: 0.8rem;
+    }
+
+    .Version {
+      margin-right: 1rem;
+      font-size: 0.8rem;
+      color: $dividerTitle;
+    }
+  }
+}

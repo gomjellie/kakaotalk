@@ -142,7 +142,7 @@ const template = [
         label: "More",
         accelerator: isCupertino ? "Cmd+3" : "Ctrl+3",
         click: () => {
-          gWin.webContents.send("fromMain", "switch/etc");
+          gWin.webContents.send("fromMain", "switch/more");
         },
       },
       ...(isCupertino ? [
