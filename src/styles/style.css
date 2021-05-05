@@ -210,10 +210,6 @@
   border-top: 1px solid #f1f1f1;
 }
 
-.FriendTabContainer main .BirthdayItem :hover, .FriendTabContainer main .ChannelItem :hover, .FriendTabContainer main .UserItem :hover {
-  background-color: #f7f7f7;
-}
-
 .FriendTabContainer main .ChannelItem {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -232,10 +228,14 @@
   padding: 0.2rem;
 }
 
+.FriendTabContainer main .ChannelItem:hover {
+  background-color: #f7f7f7;
+}
+
 .FriendTabContainer main .ChannelItem .Avatar {
   margin-left: 0.3rem;
   margin-right: 0.3rem;
-  height: 80%;
+  height: 2.8rem;
   border-radius: 40%;
 }
 
@@ -248,6 +248,7 @@
 }
 
 .FriendTabContainer main .ChannelItem .Texts .NumChannel {
+  margin-left: 0.3rem;
   color: #c7c7c7;
   display: inline;
 }
@@ -270,10 +271,14 @@
   padding: 0.2rem;
 }
 
+.FriendTabContainer main .UserItem:hover {
+  background-color: #f7f7f7;
+}
+
 .FriendTabContainer main .UserItem .Avatar {
   margin-left: 0.3rem;
   margin-right: 0.3rem;
-  height: 80%;
+  height: 2.8rem;
   border-radius: 40%;
 }
 
