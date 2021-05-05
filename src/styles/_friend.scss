@@ -72,7 +72,7 @@
   main {
     @include customScrollbar();
     height: calc(100% - 5.3rem);
-    overflow-y: auto;
+    overflow-y: scroll;
 
     .SectionTitle {
       margin-top: 0.5rem;
