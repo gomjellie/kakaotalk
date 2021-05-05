@@ -288,41 +288,11 @@
   padding: 0.2rem;
 }
 
-.FriendTabContainer main .ChannelItem .AvatarWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+.FriendTabContainer main .ChannelItem .Avatar {
   margin-left: 0.3rem;
   margin-right: 0.3rem;
-  height: 2.72rem;
-  width: 2.72rem;
-  background-color: #fae101;
+  height: 80%;
   border-radius: 40%;
-}
-
-.FriendTabContainer main .ChannelItem .AvatarWrapper .CH {
-  position: absolute;
-  margin-bottom: 2px;
-  color: #fae101;
-  font-size: 0.7rem;
-  z-index: 1;
-}
-
-.FriendTabContainer main .ChannelItem .AvatarWrapper .Avatar {
-  height: 50%;
-  -webkit-filter: invert(0%);
-          filter: invert(0%);
 }
 
 .FriendTabContainer main .ChannelItem .Texts {
@@ -389,6 +359,11 @@
 }
 
 .FriendTabContainer main .UserItem .Infos .LeftInfo .StatMessage {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   font-size: 0.7rem;
   color: #c7c7c7;
 }
@@ -401,12 +376,12 @@
 }
 
 .FriendTabContainer main .UserItem .Infos .RightInfo .Music {
-  color: #404040;
-  font-size: 0.7rem;
-  width: 100%;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 0.7rem;
   color: #404040;
 }
 

@@ -1,13 +1,10 @@
 import React from 'react';
-import chatImg from '../../assets/chat.png';
+import ChannelIcon from '../../assets/channel.png';
 
 export default function ChannelItem({numChannel}) {
   return (
     <div className="ChannelItem">
-      <div className="AvatarWrapper">
-        <div className="CH">Ch</div>
-        <img className="Avatar" src={chatImg} alt=""></img>
-      </div>
+      <img className="Avatar" src={ChannelIcon} alt="" />
       
       <div className="Texts">Channel <div className="NumChannel">{numChannel}</div></div>
     </div>

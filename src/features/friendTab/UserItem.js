@@ -1,10 +1,10 @@
 import React from 'react';
-import bieberImg from '../../assets/bieber.jpg';
+import defaultProfileImg from '../../assets/defaultProfile.png';
 
 export default function UserItem({nickname, avatar, stat, music}) {
   return (
     <div className="UserItem">
-      <img className="Avatar" src={avatar || bieberImg} alt="" />
+      <img className="Avatar" src={avatar || defaultProfileImg} alt="" />
       <div className="Infos">
         <div className="LeftInfo">
           {nickname && <div className="NickName">{ nickname }</div>}
