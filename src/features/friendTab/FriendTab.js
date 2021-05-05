@@ -1,7 +1,7 @@
 import React from 'react';
 import addFriendImg from '../../assets/addFriend.png';
 import searchImg from '../../assets/search.png';
-import BirthdayItem from './BirthdayItem';
+import birthdayImg from '../../assets/birthday.png';
 import ChannelItem from './ChannelItem';
 import Divider from './Divider';
 import SectionTitle from './SectionTitle';
@@ -33,10 +33,10 @@ export default function Friend() {
         <Divider />
         <SectionTitle title="Friends with Birthdays"/>
         <UserItem nickname={user.nickname} music={user.music}/>
-        <BirthdayItem numBirthday={16}/>
+        <ChannelItem icon={birthdayImg} name="View more birthdays" numItem={16}/>
         <Divider />
         <SectionTitle title="Channel"/>
-        <ChannelItem numChannel={10}/>
+        <ChannelItem name="Channel" numItem={10}/>
         <Divider />
         <SectionTitle title="Friends 389"/>
         <UserItem nickname={user.nickname} stat={user.stat} music="Justin Bieber - Lorem Ipsum Lorem Ipsum"/>
