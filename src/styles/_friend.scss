@@ -70,6 +70,7 @@
   }
 
   main {
+    @include customScrollbar();
     height: calc(100% - 5.3rem);
     overflow-y: auto;
 

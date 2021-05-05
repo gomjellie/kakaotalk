@@ -196,6 +196,24 @@
   overflow-y: auto;
 }
 
+.FriendTabContainer main::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.FriendTabContainer main::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.FriendTabContainer main::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #c7c7c7;
+}
+
+.FriendTabContainer main::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
 .FriendTabContainer main .SectionTitle {
   margin-top: 0.5rem;
   margin-left: 0.7rem;
@@ -458,6 +476,24 @@
 .ChatTabContainer main.Chat {
   height: calc(100% - 5.3rem);
   overflow-y: auto;
+}
+
+.ChatTabContainer main.Chat::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.ChatTabContainer main.Chat::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.ChatTabContainer main.Chat::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #c7c7c7;
+}
+
+.ChatTabContainer main.Chat::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
 }
 
 .ChatTabContainer main.Chat .ChatRoomItem {

@@ -21,3 +21,23 @@
   -webkit-line-clamp: $numLine;
   -webkit-box-orient: vertical;
 }
+
+@mixin customScrollbar() {
+  &::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: $dimGray;
+  }
+
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+}
