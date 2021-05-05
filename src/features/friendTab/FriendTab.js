@@ -7,6 +7,12 @@ import Divider from './Divider';
 import SectionTitle from './SectionTitle';
 import UserItem from './UserItem';
 import raloImg from '../../assets/ralo.png';
+import chanoImg from '../../assets/chano.png';
+import bieberImg from '../../assets/bieber.jpg';
+import duhanImg from '../../assets/duhan.jpeg';
+import umImg from '../../assets/um.jpeg';
+import pakaImg from '../../assets/paka.jpeg';
+import jihwanImg from '../../assets/jihwan.jpeg';
 
 export default function Friend() {
   const user = {
@@ -32,22 +38,48 @@ export default function Friend() {
         <UserItem avatar={raloImg} nickname="김찬호" stat="남탓금지, 나를믿고 팀을믿자" music="Can't beat airman"/>
         <Divider />
         <SectionTitle title="Friends with Birthdays"/>
-        <UserItem nickname={user.nickname} music={user.music}/>
+        <UserItem avatar={bieberImg} nickname={user.nickname} music={user.music}/>
         <ChannelItem icon={birthdayImg} name="View more birthdays" numItem={16}/>
         <Divider />
         <SectionTitle title="Channel"/>
         <ChannelItem name="Channel" numItem={10}/>
         <Divider />
         <SectionTitle title="Friends 389"/>
-        <UserItem nickname={user.nickname} stat={user.stat} music="Justin Bieber - Lorem Ipsum Lorem Ipsum"/>
-        <UserItem nickname={user.nickname} stat={user.stat}/>
-        <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
-        <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
-        <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
-        <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
-        <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
-        <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
-        <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
+        <UserItem
+          avatar={chanoImg}
+          nickname="랄로"
+          stat="그렇게 됐습니다..."
+          music="おおつか あい-さくらんぼ"
+        />
+        <UserItem
+          avatar={duhanImg}
+          nickname="김두한"
+          stat="4 딸라!"
+        />
+        <UserItem
+          nickname="정상길"
+          stat=""
+          music=""
+        />
+        <UserItem
+          nickname="장지환"
+          stat="ㅅㅍㅌㄴㄲ"
+          avatar={jihwanImg}
+          music="Panic! At The Disco - I Write Sins Not Tragedies"
+        />
+        <UserItem
+          nickname="손인욱"
+          avatar={pakaImg}
+          music=""
+        />
+        <UserItem
+          nickname="엄준식"
+          avatar={umImg}
+          stat="Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum"
+        />
+        <UserItem nickname="굄우지"/>
+        <UserItem nickname="." stat="asdf"/>
+        <UserItem nickname="페페" music="Fear and Loathing in the lasvegas - Jump Around"/>
         <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
         <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
         <UserItem nickname={user.nickname} stat={user.stat} music={user.music}/>
