@@ -1,5 +1,5 @@
 import React from 'react';
-import ChannelIcon from '../../assets/channel.png';
+import ChannelIcon from 'assets/channel.png';
 
 export default function ChannelItem({icon, name, numItem}) {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import addChatImg from '../../assets/addChat.png';
-import searchImg from '../../assets/search.png';
+import addChatImg from 'assets/addChat.png';
+import searchImg from "assets/search.png";
 import ChatRoomList from './ChatRoomList';
 
 export default function ChatTab() {

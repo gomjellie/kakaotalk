@@ -1,18 +1,18 @@
 import React from 'react';
 
-import ProtectIcon from '../../assets/icons/Protect.png';
-import BTIcon from '../../assets/icons/BiggerThan.png';
-import MailIcon from '../../assets/icons/Mail.png';
-import CalendarIcon from '../../assets/icons/Calendar.png';
-import TalkDriveIcon from '../../assets/icons/TalkDrive.png';
-import EmoticonIcon from '../../assets/icons/Emoticon.png';
-import TVIcon from '../../assets/icons/TV.png';
-import GiftIcon from '../../assets/icons/Gift.png';
-import NoticesIcon from '../../assets/icons/Notices.png';
-import KakaoLabIcon from '../../assets/icons/KakaoLab.png';
-import SettingsIcon from '../../assets/icons/Settings.png';
-import HelpIcon from '../../assets/icons/Help.png';
-import InfoIcon from '../../assets/icons/Info.png';
+import ProtectIcon from 'assets/icons/Protect.png';
+import BTIcon from 'assets/icons/BiggerThan.png';
+import MailIcon from 'assets/icons/Mail.png';
+import CalendarIcon from 'assets/icons/Calendar.png';
+import TalkDriveIcon from 'assets/icons/TalkDrive.png';
+import EmoticonIcon from 'assets/icons/Emoticon.png';
+import TVIcon from 'assets/icons/TV.png';
+import GiftIcon from 'assets/icons/Gift.png';
+import NoticesIcon from 'assets/icons/Notices.png';
+import KakaoLabIcon from 'assets/icons/KakaoLab.png';
+import SettingsIcon from 'assets/icons/Settings.png';
+import HelpIcon from 'assets/icons/Help.png';
+import InfoIcon from 'assets/icons/Info.png';
 
 export default function More() {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import defaultProfileImg from '../../assets/defaultProfile.png';
+import defaultProfileImg from 'assets/defaultProfile.png';
 
 export default function UserItem({nickname, avatar, stat, music}) {
   return (

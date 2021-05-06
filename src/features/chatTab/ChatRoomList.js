@@ -1,9 +1,9 @@
 import React from 'react';
 import ChatRoomItem from './ChatRoomItem';
-import duhanJpeg from '../../assets/duhan.jpeg';
-import kakaoPayImg from '../../assets/kakaopay.png';
-import raloImg from '../../assets/ralo.png';
-import pepeGif from '../../assets/pepe.gif';
+import duhanJpeg from 'assets/duhan.jpeg';
+import kakaoPayImg from 'assets/kakaopay.png';
+import raloImg from 'assets/ralo.png';
+import pepeGif from 'assets/pepe.gif';
 
 export default function ChatRoomList() {
 

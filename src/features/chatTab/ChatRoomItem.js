@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import defaultAvatarImg from '../../assets/defaultProfile.png';
-import TimeView from '../../components/TimeView';
+import defaultAvatarImg from 'assets/defaultProfile.png';
+import TimeView from 'components/TimeView';
 
 function Badge({num}) {
   return (
