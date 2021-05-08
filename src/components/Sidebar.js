@@ -7,13 +7,7 @@ import chatImg from 'assets/chat.png';
 import userImg from 'assets/user.png';
 
 import { useHistory } from 'react-router-dom';
-
-function useConstructor(callBack = () => {}) {
-  const [hasBeenCalled, setHasBeenCalled] = useState(false);
-  if (hasBeenCalled) return;
-  setHasBeenCalled(true);
-  callBack();
-}
+import useConstructor from 'hooks/useConstructor';
 
 export default function Sidebar() {
   const history = useHistory();
