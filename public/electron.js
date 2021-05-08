@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 const { app, BrowserWindow, Menu, ipcMain } = require("electron");
 const path = require("path");
-
+const { SWITCH_FRIEND, SWITCH_CHAT, SWITCH_MORE, OPEN_CHAT_ROOM } = require("./constants");
 dotenv.config({ path: path.join(__dirname, "../.env") });
 
 let mainWindow = null;
@@ -25,7 +25,7 @@ function createWindow() {
   } else {
     win.loadFile(`${path.join(__dirname, "../build/index.html")}`);
     win.webContents.once('dom-ready', () => {
-      win.webContents.send("fromMain", "switch/friend");
+      win.webContents.send("fromMain", SWITCH_FRIEND);
     });
   }
 
@@ -69,7 +69,9 @@ ipcMain.on('new-chat-window', (event) => {
   if (process.env.mode === "dev") {
     chatWin.loadURL("http://localhost:3000");
     chatWin.webContents.once('dom-ready', () => {
-      chatWin.webContents.send("fromMain", "switch/chatRoom");
+      chatWin.webContents.send("fromMain", {
+        ...OPEN_CHAT_ROOM, roomNumber: 13,
+      });
     });
   } else {
     chatWin.loadFile(`${path.join(__dirname, "../build/index.html")}`);
@@ -162,21 +164,21 @@ const template = [
         label: "friends",
         accelerator: isCupertino ? "Cmd+1" : "Ctrl+1",
         click: () => {
-          mainWindow.webContents.send("fromMain", "switch/friend");
+          mainWindow.webContents.send("fromMain", SWITCH_FRIEND);
         },
       },
       {
         label: "Chats",
         accelerator: isCupertino ? "Cmd+2" : "Ctrl+2",
         click: () => {
-          mainWindow.webContents.send("fromMain", "switch/chat");
+          mainWindow.webContents.send("fromMain", SWITCH_CHAT);
         },
       },
       {
         label: "More",
         accelerator: isCupertino ? "Cmd+3" : "Ctrl+3",
         click: () => {
-          mainWindow.webContents.send("fromMain", "switch/more");
+          mainWindow.webContents.send("fromMain", SWITCH_MORE);
         },
       },
       {

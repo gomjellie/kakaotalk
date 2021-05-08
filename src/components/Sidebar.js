@@ -14,11 +14,11 @@ export default function Sidebar() {
   const [selected, setSelected] = useState('/');
 
   useConstructor(() => {
-    window?.api?.receive('fromMain', (data) => {
-      console.log(data);
-      const [command, tab] = data.split('/');
-      if (command === 'switch') {
-        pushFactory(tab)();
+    window?.api?.receive('fromMain', (payload) => {
+      console.log(payload);
+      const {command} = payload;
+      if (command === 'switchTab') {
+        pushFactory(payload.goto)();
       }
     })
   })
