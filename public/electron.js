@@ -7,7 +7,7 @@ dotenv.config({ path: path.join(__dirname, "../.env") });
 let mainWindow = null;
 const windows = new Set();
 
-function createWindow() {
+function createWindow(initialPayload = SWITCH_FRIEND) {
   let win = new BrowserWindow({
     show: false,
     webPreferences: {
@@ -27,7 +27,7 @@ function createWindow() {
   }
   win.webContents.once('dom-ready', () => {
     // switch to initial tab
-    win.webContents.send("fromMain", SWITCH_FRIEND);
+    win.webContents.send("fromMain", initialPayload);
   });
 
   win.once("ready-to-show", () => win.show());
@@ -186,7 +186,7 @@ const template = [
         label: 'New Window',
         accelerator: 'Cmd+N',
         click: () => {
-          createWindow();
+          createWindow(SWITCH_MORE);
         },
       },
       ...(isCupertino ? [
