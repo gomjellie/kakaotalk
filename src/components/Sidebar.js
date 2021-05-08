@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
 
-import bellImg from '../assets/bell.png';
-import etcImg from '../assets/etc.png';
-import settingImg from '../assets/setting.png';
-import chatImg from '../assets/chat.png';
-import userImg from '../assets/user.png';
+import bellImg from 'assets/bell.png';
+import etcImg from 'assets/etc.png';
+import settingImg from 'assets/setting.png';
+import chatImg from 'assets/chat.png';
+import userImg from 'assets/user.png';
 
 import { useHistory } from 'react-router-dom';
 

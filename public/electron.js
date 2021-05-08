@@ -1,10 +1,11 @@
 const dotenv = require("dotenv");
-const { app, BrowserWindow, Menu } = require("electron");
+const { app, BrowserWindow, Menu, ipcMain } = require("electron");
 const path = require("path");
 
 dotenv.config({ path: path.join(__dirname, "../.env") });
 
-let gWin = null;
+let mainWindow = null;
+const windows = new Set();
 
 function createWindow() {
   let win = new BrowserWindow({
@@ -21,32 +22,65 @@ function createWindow() {
   });
   if (process.env.mode === "dev") {
     win.loadURL("http://localhost:3000");
-    // win.webContents.openDevTools()
   } else {
-    // win.loadURL(`file://${path.join(__dirname, '../build/index.html')}`)
-    console.log(`${path.join(__dirname, "../build/index.html")}`);
     win.loadFile(`${path.join(__dirname, "../build/index.html")}`);
+    win.webContents.once('dom-ready', () => {
+      win.webContents.send("fromMain", "switch/friend");
+    });
   }
 
   win.once("ready-to-show", () => win.show());
   win.on("closed", () => {
+    windows.delete(win);
     win = null;
   });
+
+  windows.add(win);
   return win;
 }
 
 app.whenReady().then(() => {
-  gWin = createWindow();
+  mainWindow = createWindow();
 
   app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      gWin = createWindow();
+    if (windows.size === 0) {
+      mainWindow = createWindow();
     }
   });
 });
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
+});
+
+ipcMain.on('new-chat-window', (event) => {
+  const chatWin = new BrowserWindow({
+    show: false,
+    webPreferences: {
+      enableRemoteModule: true,
+      preload: `${__dirname}/preload.js`,
+    },
+    width: 375,
+    height: 680,
+    minHeight: 400,
+    titleBarStyle: 'hidden',
+  });
+
+  if (process.env.mode === "dev") {
+    chatWin.loadURL("http://localhost:3000");
+    chatWin.webContents.once('dom-ready', () => {
+      chatWin.webContents.send("fromMain", "switch/chatRoom");
+    });
+  } else {
+    chatWin.loadFile(`${path.join(__dirname, "../build/index.html")}`);
+  }
+
+  chatWin.once("ready-to-show", () => chatWin.show());
+  chatWin.on("closed", () => {
+    windows.delete(chatWin);
+  });
+
+  windows.add(chatWin);
 });
 
 const isCupertino = process.platform === "darwin";
@@ -128,21 +162,28 @@ const template = [
         label: "friends",
         accelerator: isCupertino ? "Cmd+1" : "Ctrl+1",
         click: () => {
-          gWin.webContents.send("fromMain", "switch/friend");
+          mainWindow.webContents.send("fromMain", "switch/friend");
         },
       },
       {
         label: "Chats",
         accelerator: isCupertino ? "Cmd+2" : "Ctrl+2",
         click: () => {
-          gWin.webContents.send("fromMain", "switch/chat");
+          mainWindow.webContents.send("fromMain", "switch/chat");
         },
       },
       {
         label: "More",
         accelerator: isCupertino ? "Cmd+3" : "Ctrl+3",
         click: () => {
-          gWin.webContents.send("fromMain", "switch/more");
+          mainWindow.webContents.send("fromMain", "switch/more");
+        },
+      },
+      {
+        label: 'New Window',
+        accelerator: 'Cmd+N',
+        click: () => {
+          createWindow();
         },
       },
       ...(isCupertino ? [
