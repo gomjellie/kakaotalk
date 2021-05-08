@@ -24,10 +24,11 @@ function createWindow() {
     win.loadURL("http://localhost:3000");
   } else {
     win.loadFile(`${path.join(__dirname, "../build/index.html")}`);
-    win.webContents.once('dom-ready', () => {
-      win.webContents.send("fromMain", SWITCH_FRIEND);
-    });
   }
+  win.webContents.once('dom-ready', () => {
+    // switch to initial tab
+    win.webContents.send("fromMain", SWITCH_FRIEND);
+  });
 
   win.once("ready-to-show", () => win.show());
   win.on("closed", () => {

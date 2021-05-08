@@ -11,7 +11,7 @@ import useConstructor from 'hooks/useConstructor';
 
 export default function Sidebar() {
   const history = useHistory();
-  const [selected, setSelected] = useState('/');
+  const [selected, setSelected] = useState('/friend');
 
   useConstructor(() => {
     window?.api?.receive('fromMain', (payload) => {
@@ -32,7 +32,7 @@ export default function Sidebar() {
 
   return (
     <aside className="Sidebar">
-      <img className={['/friend', '/'].includes(selected) ? "highlight" : ''} width="33%" id="personal" src={userImg} onClick={pushFactory('friend')} alt=""/>
+      <img className={selected==='/friend' ? "highlight" : ''} width="33%" id="personal" src={userImg} onClick={pushFactory('friend')} alt=""/>
       <img className={selected==='/chat' ? "highlight" : ''} width="33%" id="chat" src={chatImg} onClick={pushFactory('chat')} alt=""/>
       <img className={selected==='/more' ? "highlight" : ''} width="30%" id="etc" src={etcImg} onClick={pushFactory('more')} alt=""/>
       <img width="25%" id="bell" src={bellImg} alt=""/>

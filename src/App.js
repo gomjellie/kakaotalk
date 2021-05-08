@@ -18,7 +18,6 @@ function App() {
       <Router>
         <Sidebar />
         <Switch>
-          <Route exact path="/" component={FriendTab} />
           <Route exact path="/friend" component={FriendTab} />
           <Route exact path="/chat" component={ChatTab} />
           <Route exact path="/more" component={MoreTab} />
