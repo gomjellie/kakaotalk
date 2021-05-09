@@ -186,7 +186,9 @@ const template = [
         label: 'New Window',
         accelerator: 'Cmd+N',
         click: () => {
-          createWindow(SWITCH_MORE);
+          createWindow({
+            ...OPEN_CHAT_ROOM, roomNumber: 13,
+          });
         },
       },
       ...(isCupertino ? [

@@ -1,0 +1,32 @@
+
+.ChatRoomContainer {
+  display: block;
+  height: 100%;
+  flex: 1;
+  // background-color: aquamarine;
+
+  .Header {
+    @include flexCenter(row);
+    @include draggable();
+    justify-content: space-between;
+    height: 6rem;
+    background-color: azure;
+    
+
+  }
+
+  main {
+    background-color: aquamarine;
+    height: calc(100% - 14.5rem);
+  }
+
+  .InputTools {
+    height: 2.5rem;
+    background-color: $gray;
+  }
+
+  .Input {
+    height: 6rem;
+    background-color: $white;
+  }
+}

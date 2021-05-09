@@ -15,6 +15,9 @@ export default function Sidebar() {
       if (command === "switchTab") {
         history.push(`/${payload.goto}`);
       }
+      else if (command === "openWindow" && payload.type === "chatRoom") {
+        history.push(`/${payload.type}:${payload.roomNumber}`);
+      }
     });
   });
 
