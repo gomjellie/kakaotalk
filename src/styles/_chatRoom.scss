@@ -17,16 +17,44 @@
 
   main {
     background-color: aquamarine;
-    height: calc(100% - 14.5rem);
+    height: calc(100% - 14.3rem);
   }
 
   .InputTools {
-    height: 2.5rem;
+    height: 2.4rem;
     background-color: $gray;
   }
 
   .Input {
-    height: 6rem;
+    display: grid;
+    grid-template-columns: 1fr 5rem;
+    align-items: center;
+    height: 5.9rem;
     background-color: $white;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+
+    .TextInput {
+      @include defaultFonts();
+      font-size: 0.88rem;
+      // font-weight: 400;
+      height: 90%;
+      // background-color: blueviolet;
+      outline: none;
+      border: none;
+      resize: none;
+    }
+    .SendButton {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 4.4rem;
+      background-color: rgb(241, 241, 241);
+      border-radius: 5px;
+      border: 1px solid rgb(224, 224, 224);
+      color: $dimGray;
+      font-size: smaller;
+    }
   }
 }

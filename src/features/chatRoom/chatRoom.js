@@ -15,7 +15,12 @@ export default function ChatRoom({ match }) {
 
       </div>
       <div className="Input">
+        <textarea className="TextInput" spellcheck="false">
 
+        </textarea>
+        <div className="SendButton">
+          Send
+        </div>
       </div>
     </section>
   );
