@@ -836,7 +836,7 @@
 }
 
 .ChatRoomContainer main {
-  background-color: aquamarine;
+  background-color: #bdd1dc;
   height: calc(100% - 14.3rem - 1px);
 }
 
@@ -850,7 +850,7 @@
           align-items: center;
   justify-items: center;
   height: 2.4rem;
-  background-color: #f7f7f7;
+  background-color: #f8f8f8;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   border-bottom: 1px solid #e0e0e0;
@@ -871,7 +871,6 @@
       -ms-flex-align: center;
           align-items: center;
   height: 5.9rem;
-  background-color: white;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
 }
