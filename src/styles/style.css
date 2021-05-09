@@ -813,6 +813,31 @@
 }
 
 .ChatRoomContainer .Header {
+  -webkit-app-region: drag;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 6rem;
+  background-color: #fafafa;
+}
+
+.ChatRoomContainer .Header .HeaderRow {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4rem 1fr 8rem;
+      grid-template-columns: 4rem 1fr 8rem;
+  height: 4.4rem;
+  width: 100%;
+}
+
+.ChatRoomContainer .Header .HeaderRow .AvatarWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -823,16 +848,133 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+  height: 100%;
+}
+
+.ChatRoomContainer .Header .HeaderRow .AvatarWrapper img {
+  width: 2.8rem;
+  border-radius: 40%;
+}
+
+.ChatRoomContainer .Header .HeaderRow .RoomInfoWrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 0.6rem 1fr;
+      grid-template-rows: 1fr 0.6rem 1fr;
+}
+
+.ChatRoomContainer .Header .HeaderRow .RoomInfoWrapper .RoomName {
+  font-family: "Helvetica neue";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 0.9rem;
+}
+
+.ChatRoomContainer .Header .HeaderRow .RoomInfoWrapper .RoomMembers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-app-region: drag;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 6rem;
-  background-color: azure;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-size: 0.8rem;
+}
+
+.ChatRoomContainer .Header .HeaderRow .RoomInfoWrapper .RoomMembers img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 0.6rem;
+  height: 0.6rem;
+  -webkit-filter: opacity(0.5);
+          filter: opacity(0.5);
+  margin-right: 0.2rem;
+}
+
+.ChatRoomContainer .Header .HeaderRow .RoomControllerWrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  height: 100%;
+}
+
+.ChatRoomContainer .Header .HeaderRow .RoomControllerWrapper .TransparencyControllerWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 0.6rem;
+}
+
+.ChatRoomContainer .Header .HeaderRow .RoomControllerWrapper .TransparencyControllerWrapper .TransparencyController {
+  width: 40%;
+  -webkit-app-region: none;
+  -webkit-appearance: none;
+  background: #777777;
+  height: 0.1rem;
+  outline: none;
+}
+
+.ChatRoomContainer .Header .HeaderRow .RoomControllerWrapper .TransparencyControllerWrapper .TransparencyController::-webkit-slider-thumb {
+  -webkit-app-region: none;
+  -webkit-appearance: none;
+  border: 1px solid #c7c7c7;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  background: #f7f7f7;
+}
+
+.ChatRoomContainer .Header .HeaderRow .RoomControllerWrapper .RoomControllerButtons {
+  display: -ms-grid;
+  display: grid;
+  padding-right: 0.7rem;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  justify-items: center;
+  gap: 0.2rem;
+}
+
+.ChatRoomContainer .Header .HeaderRow .RoomControllerWrapper .RoomControllerButtons .RoomControllerButton {
+  width: 0.8rem;
+  padding: 0.3rem;
+  border: 1px solid #c7c7c7;
+  border-radius: 50%;
+  -webkit-filter: opacity(0.5);
+          filter: opacity(0.5);
 }
 
 .ChatRoomContainer main {

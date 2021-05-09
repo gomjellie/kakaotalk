@@ -22,6 +22,7 @@ function createWindow(initialPayload = SWITCH_FRIEND) {
   });
   if (process.env.mode === "dev") {
     win.loadURL("http://localhost:3000");
+    win.webContents.openDevTools();
   } else {
     win.loadFile(`${path.join(__dirname, "../build/index.html")}`);
   }
@@ -187,7 +188,7 @@ const template = [
         accelerator: 'Cmd+N',
         click: () => {
           createWindow({
-            ...OPEN_CHAT_ROOM, roomNumber: 13,
+            ...OPEN_CHAT_ROOM, roomName: '일론머스크',
           });
         },
       },

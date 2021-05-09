@@ -19,7 +19,7 @@ function App() {
       <Router>
         <Switcher />
         <Switch>
-          <Route exact path="/chatRoom:id" component={ChatRoom} />
+          <Route exact path="/chatRoom/:id" component={ChatRoom} />
           <Route exact path="/friend" component={FriendTab} />
           <Route exact path="/chat" component={ChatTab} />
           <Route exact path="/more" component={MoreTab} />
