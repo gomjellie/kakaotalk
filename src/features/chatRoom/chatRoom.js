@@ -12,6 +12,7 @@ import TalkDriveIcon from "assets/icons/TalkDrive.png";
 import HamburgerMenuIcon from "assets/icons/HamburgerMenu.png";
 
 import TimeDivider from "./TimeDivider";
+import TimeView from "./TimeView";
 
 export default function ChatRoom({ match }) {
   const { id } = match.params;
@@ -58,8 +59,14 @@ export default function ChatRoom({ match }) {
         </div>
         <div className="BubbleWrapper Left First">
           <div className="Bubble">아</div>
+          <div className="RightInfos">
+            <TimeView datetime={new Date()} />
+          </div>
         </div>
         <div className="BubbleWrapper Right First">
+          <div className="LeftInfos">
+            <TimeView datetime={new Date()} />
+          </div>
           <div className="Bubble">아</div>
         </div>
         <div className="Chatter">
@@ -70,8 +77,14 @@ export default function ChatRoom({ match }) {
           <div className="Bubble">
             가나다라마바사아자차카타파하가나다라마바사아자차카타파하
           </div>
+          <div className="RightInfos">
+            <TimeView datetime={new Date()} />
+          </div>
         </div>
         <div className="BubbleWrapper Right First">
+          <div className="LeftInfos">
+            <TimeView datetime={new Date()} />
+          </div>
           <div className="Bubble">
             가나다라마바사아자차카타파하가나다라마바사아자차카타파하
           </div>
@@ -83,8 +96,14 @@ export default function ChatRoom({ match }) {
         </div>
         <div className="BubbleWrapper Left First">
           <div className="Bubble">뭐하냐</div>
+          <div className="RightInfos">
+            <TimeView datetime={new Date()} />
+          </div>
         </div>
         <div className="BubbleWrapper Right First">
+          <div className="LeftInfos">
+            <TimeView datetime={new Date()} />
+          </div>
           <div className="Bubble">뭐</div>
         </div>
         <div className="Chatter">
@@ -93,8 +112,16 @@ export default function ChatRoom({ match }) {
         </div>
         <div className="BubbleWrapper Left First">
           <div className="Bubble">아니 뭐</div>
+          <div className="RightInfos">
+            <div className="Unreads">1</div>
+            <TimeView datetime={new Date()} />
+          </div>
         </div>
         <div className="BubbleWrapper Right First">
+          <div className="LeftInfos">
+            <div className="Unreads">1</div>
+            <TimeView datetime={new Date()} />
+          </div>
           <div className="Bubble">
             가나다라마바사아자차카타파하가나다라마바사아자차카타파하
           </div>
@@ -108,13 +135,24 @@ export default function ChatRoom({ match }) {
             가나 다라마바사아자
             차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하
           </div>
+          <div className="RightInfos">
+            <div className="Unreads">1</div>
+          </div>
         </div>
         <div className="BubbleWrapper Left">
           <div className="Bubble">
             가나다라마바사아자차 카타파하가나다라마바사아자차카타파하
           </div>
+          <div className="RightInfos">
+            <div className="Unreads">1</div>
+            <TimeView datetime={new Date()} />
+          </div>
         </div>
         <div className="BubbleWrapper Right First">
+          <div className="LeftInfos">
+            <div className="Unreads">1</div>
+            <TimeView datetime={new Date()} />
+          </div>
           <div className="Bubble">ㄹㅇㅋㅋ</div>
         </div>
       </main>

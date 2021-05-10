@@ -18,6 +18,5 @@ export default function TimeDivider({ date }) {
       </time>
       <div />
     </div>
-    
   );
 }
