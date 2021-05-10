@@ -7,7 +7,7 @@ dotenv.config({ path: path.join(__dirname, "../.env") });
 let mainWindow = null;
 const windows = new Set();
 
-function createWindow(initialPayload = SWITCH_FRIEND) {
+function createWindow(name = "main", initialPayload = SWITCH_FRIEND) {
   let win = new BrowserWindow({
     show: false,
     webPreferences: {
@@ -20,6 +20,7 @@ function createWindow(initialPayload = SWITCH_FRIEND) {
     minHeight: 660,
     titleBarStyle: "hidden",
   });
+  win.name = name;
   if (process.env.mode === "dev") {
     win.loadURL("http://localhost:3000");
     win.webContents.openDevTools();
@@ -166,13 +167,21 @@ const template = [
         label: "friends",
         accelerator: isCupertino ? "Cmd+1" : "Ctrl+1",
         click: () => {
-          mainWindow.webContents.send("fromMain", SWITCH_FRIEND);
+          if (windows.has(mainWindow) === false) {
+            mainWindow = createWindow();
+          }
+          mainWindow.focus();
+          mainWindow?.webContents?.send?.("fromMain", SWITCH_FRIEND);
         },
       },
       {
         label: "Chats",
         accelerator: isCupertino ? "Cmd+2" : "Ctrl+2",
         click: () => {
+          if (windows.has(mainWindow) === false) {
+            mainWindow = createWindow();
+          }
+          mainWindow.focus();
           mainWindow.webContents.send("fromMain", SWITCH_CHAT);
         },
       },
@@ -180,6 +189,10 @@ const template = [
         label: "More",
         accelerator: isCupertino ? "Cmd+3" : "Ctrl+3",
         click: () => {
+          if (windows.has(mainWindow) === false) {
+            mainWindow = createWindow();
+          }
+          mainWindow.focus();
           mainWindow.webContents.send("fromMain", SWITCH_MORE);
         },
       },
@@ -187,7 +200,7 @@ const template = [
         label: 'New Window',
         accelerator: 'Cmd+N',
         click: () => {
-          createWindow({
+          createWindow('ChatRoom', {
             ...OPEN_CHAT_ROOM, roomName: '일론머스크',
           });
         },
