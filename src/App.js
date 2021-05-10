@@ -7,18 +7,19 @@ import {
   Route,
 } from "react-router-dom";
 
-import Sidebar from './components/Sidebar';
+import Switcher from './components/Switcher';
 import FriendTab from './features/friendTab/FriendTab';
 import ChatTab from './features/chatTab/ChatTab';
 import MoreTab from './features/moreTab/MoreTab';
+import ChatRoom from 'features/chatRoom/chatRoom';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Sidebar />
+        <Switcher />
         <Switch>
-          <Route exact path="/" component={FriendTab} />
+          <Route exact path="/chatRoom/:id" component={ChatRoom} />
           <Route exact path="/friend" component={FriendTab} />
           <Route exact path="/chat" component={ChatTab} />
           <Route exact path="/more" component={MoreTab} />

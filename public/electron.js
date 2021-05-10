@@ -1,12 +1,13 @@
 const dotenv = require("dotenv");
-const { app, BrowserWindow, Menu } = require("electron");
+const { app, BrowserWindow, Menu, ipcMain } = require("electron");
 const path = require("path");
-
+const { SWITCH_FRIEND, SWITCH_CHAT, SWITCH_MORE, OPEN_CHAT_ROOM } = require("./constants");
 dotenv.config({ path: path.join(__dirname, "../.env") });
 
-let gWin = null;
+let mainWindow = null;
+const windows = new Set();
 
-function createWindow() {
+function createWindow(name = "main", initialPayload = SWITCH_FRIEND) {
   let win = new BrowserWindow({
     show: false,
     webPreferences: {
@@ -19,34 +20,72 @@ function createWindow() {
     minHeight: 660,
     titleBarStyle: "hidden",
   });
+  win.name = name;
   if (process.env.mode === "dev") {
     win.loadURL("http://localhost:3000");
-    // win.webContents.openDevTools()
+    win.webContents.openDevTools();
   } else {
-    // win.loadURL(`file://${path.join(__dirname, '../build/index.html')}`)
-    console.log(`${path.join(__dirname, "../build/index.html")}`);
     win.loadFile(`${path.join(__dirname, "../build/index.html")}`);
   }
+  win.webContents.once('dom-ready', () => {
+    // switch to initial tab
+    win.webContents.send("fromMain", initialPayload);
+  });
 
   win.once("ready-to-show", () => win.show());
   win.on("closed", () => {
+    windows.delete(win);
     win = null;
   });
+
+  windows.add(win);
   return win;
 }
 
 app.whenReady().then(() => {
-  gWin = createWindow();
+  mainWindow = createWindow();
 
   app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      gWin = createWindow();
+    if (windows.size === 0) {
+      mainWindow = createWindow();
     }
   });
 });
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
+});
+
+ipcMain.on('new-chat-window', (event) => {
+  const chatWin = new BrowserWindow({
+    show: false,
+    webPreferences: {
+      enableRemoteModule: true,
+      preload: `${__dirname}/preload.js`,
+    },
+    width: 375,
+    height: 680,
+    minHeight: 400,
+    titleBarStyle: 'hidden',
+  });
+
+  if (process.env.mode === "dev") {
+    chatWin.loadURL("http://localhost:3000");
+    chatWin.webContents.once('dom-ready', () => {
+      chatWin.webContents.send("fromMain", {
+        ...OPEN_CHAT_ROOM, roomNumber: 13,
+      });
+    });
+  } else {
+    chatWin.loadFile(`${path.join(__dirname, "../build/index.html")}`);
+  }
+
+  chatWin.once("ready-to-show", () => chatWin.show());
+  chatWin.on("closed", () => {
+    windows.delete(chatWin);
+  });
+
+  windows.add(chatWin);
 });
 
 const isCupertino = process.platform === "darwin";
@@ -128,21 +167,42 @@ const template = [
         label: "friends",
         accelerator: isCupertino ? "Cmd+1" : "Ctrl+1",
         click: () => {
-          gWin.webContents.send("fromMain", "switch/friend");
+          if (windows.has(mainWindow) === false) {
+            mainWindow = createWindow();
+          }
+          mainWindow.focus();
+          mainWindow?.webContents?.send?.("fromMain", SWITCH_FRIEND);
         },
       },
       {
         label: "Chats",
         accelerator: isCupertino ? "Cmd+2" : "Ctrl+2",
         click: () => {
-          gWin.webContents.send("fromMain", "switch/chat");
+          if (windows.has(mainWindow) === false) {
+            mainWindow = createWindow();
+          }
+          mainWindow.focus();
+          mainWindow.webContents.send("fromMain", SWITCH_CHAT);
         },
       },
       {
         label: "More",
         accelerator: isCupertino ? "Cmd+3" : "Ctrl+3",
         click: () => {
-          gWin.webContents.send("fromMain", "switch/more");
+          if (windows.has(mainWindow) === false) {
+            mainWindow = createWindow();
+          }
+          mainWindow.focus();
+          mainWindow.webContents.send("fromMain", SWITCH_MORE);
+        },
+      },
+      {
+        label: 'New Window',
+        accelerator: 'Cmd+N',
+        click: () => {
+          createWindow('ChatRoom', {
+            ...OPEN_CHAT_ROOM, roomName: '일론머스크',
+          });
         },
       },
       ...(isCupertino ? [
