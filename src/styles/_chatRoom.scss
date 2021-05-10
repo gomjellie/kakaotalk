@@ -2,7 +2,7 @@
   display: block;
   height: 100%;
   flex: 1;
-  
+
   .Header {
     @include draggable();
     display: flex;
@@ -69,7 +69,6 @@
           justify-content: flex-end;
           align-items: center;
           padding-right: 0.6rem;
-          // background-color: lightgreen;
 
           .TransparencyController {
             width: 40%;
@@ -80,7 +79,6 @@
             outline: none;
 
             &::-webkit-slider-thumb {
-              // -webkit-appearance: none;
               -webkit-app-region: none;
               -webkit-appearance: none;
               border: 1px solid $dimGray;
@@ -96,10 +94,9 @@
           display: grid;
           padding-right: 0.7rem;
           grid-template-columns: 1fr 1fr 1fr 1fr;
-          align-items:flex-start;
+          align-items: flex-start;
           justify-items: center;
           gap: 0.2rem;
-          // background-color: lightsalmon;
 
           .RoomControllerButton {
             width: 0.8rem;
@@ -113,9 +110,70 @@
     }
   }
 
-  main {
+  main.Chats {
+    // @include customScrollbar();
     background-color: rgb(189, 209, 220);
     height: calc(100% - 14.3rem - 1px);
+    overflow-y: auto;
+    font-size: 0.8rem;
+
+    .BubbleWrapper {
+      // margin-top: 1rem;
+      margin: 0.5rem 0;
+      line-height: 0.9rem;
+
+      &.Left {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 0.8rem;
+
+        .Bubble {
+          padding-right: 0.8rem;
+          margin-right: 4.5rem;
+          background-color: white;
+        }
+        &::before {
+          content: "";
+          position: relative;
+
+          border-left: 0.5rem solid transparent;
+          border-top: 0.5rem solid white;
+          bottom: 0.3rem;
+          filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+        }
+      }
+
+      & .Bubble {
+        padding: 0.5rem 0.6rem;
+        border-radius: 0.3rem;
+        border-bottom: 1px solid $dimGray;
+      }
+
+      &.Right {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 0.8rem;
+
+        .Bubble {
+          padding-left: 0.8rem;
+          margin-left: 4.5rem;
+          background-color: $bubbleYellow;
+        }
+        &::after {
+          content: "";
+          position: relative;
+
+          border-right: 0.5rem solid transparent;
+          border-top: 0.5rem solid $bubbleYellow;
+          bottom: 0.3rem;
+          filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+        }
+      }
+    }
   }
 
   .InputTools {

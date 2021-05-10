@@ -30,20 +30,74 @@ export default function ChatRoom({ match }) {
           </div>
           <div className="RoomControllerWrapper">
             <div className="TransparencyControllerWrapper">
-              <input type="range" className="TransparencyController">
-                
-              </input>
+              <input type="range" className="TransparencyController"></input>
             </div>
             <div className="RoomControllerButtons">
               <img src={SearchImg} alt="" className="RoomControllerButton" />
               <img src={BellImg} alt="" className="RoomControllerButton" />
-              <img src={TalkDriveIcon} alt="" className="RoomControllerButton" />
-              <img src={HamburgerMenuIcon} alt="" className="RoomControllerButton" />
+              <img
+                src={TalkDriveIcon}
+                alt=""
+                className="RoomControllerButton"
+              />
+              <img
+                src={HamburgerMenuIcon}
+                alt=""
+                className="RoomControllerButton"
+              />
             </div>
           </div>
         </div>
       </header>
-      <main></main>
+      <main className="Chats">
+        <div className="BubbleWrapper Left">
+          <div className="Bubble">아</div>
+        </div>
+        <div className="BubbleWrapper Right">
+          <div className="Bubble">아</div>
+        </div>
+        <div className="BubbleWrapper Left">
+          <div className="Bubble">
+            가나다라마바사아자차카타파하가나다라마바사아자차카타파하
+          </div>
+        </div>
+        <div className="BubbleWrapper Right">
+          <div className="Bubble">
+            가나다라마바사아자차카타파하가나다라마바사아자차카타파하
+          </div>
+        </div>
+        <div className="BubbleWrapper Left">
+          <div className="Bubble">뭐하냐</div>
+        </div>
+        <div className="BubbleWrapper Right">
+          <div className="Bubble">뭐</div>
+        </div>
+        <div className="BubbleWrapper Left">
+          <div className="Bubble">
+            아니 뭐
+          </div>
+        </div>
+        <div className="BubbleWrapper Right">
+          <div className="Bubble">
+            가나다라마바사아자차카타파하가나다라마바사아자차카타파하
+          </div>
+        </div>
+        <div className="BubbleWrapper Left">
+          <div className="Bubble">
+          가나 다라마바사아자 차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하
+          </div>
+        </div>
+        <div className="BubbleWrapper Left">
+          <div className="Bubble">
+            가나다라마바사아자차 카타파하가나다라마바사아자차카타파하
+          </div>
+        </div>
+        <div className="BubbleWrapper Right">
+          <div className="Bubble">
+            ㄹㅇㅋㅋ
+          </div>
+        </div>
+      </main>
       <div className="InputTools">
         <img src={EmoticonIcon} alt="" />
         <img src={PaperClipIcon} alt="" />

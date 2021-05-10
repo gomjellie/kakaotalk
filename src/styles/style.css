@@ -977,9 +977,88 @@
           filter: opacity(0.5);
 }
 
-.ChatRoomContainer main {
+.ChatRoomContainer main.Chats {
   background-color: #bdd1dc;
   height: calc(100% - 14.3rem - 1px);
+  overflow-y: auto;
+  font-size: 0.8rem;
+}
+
+.ChatRoomContainer main.Chats .BubbleWrapper {
+  margin: 0.5rem 0;
+  line-height: 0.9rem;
+}
+
+.ChatRoomContainer main.Chats .BubbleWrapper.Left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 0.8rem;
+}
+
+.ChatRoomContainer main.Chats .BubbleWrapper.Left .Bubble {
+  padding-right: 0.8rem;
+  margin-right: 4.5rem;
+  background-color: white;
+}
+
+.ChatRoomContainer main.Chats .BubbleWrapper.Left::before {
+  content: "";
+  position: relative;
+  border-left: 0.5rem solid transparent;
+  border-top: 0.5rem solid white;
+  bottom: 0.3rem;
+  -webkit-filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+}
+
+.ChatRoomContainer main.Chats .BubbleWrapper .Bubble {
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.3rem;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.ChatRoomContainer main.Chats .BubbleWrapper.Right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0.8rem;
+}
+
+.ChatRoomContainer main.Chats .BubbleWrapper.Right .Bubble {
+  padding-left: 0.8rem;
+  margin-left: 4.5rem;
+  background-color: #fee400;
+}
+
+.ChatRoomContainer main.Chats .BubbleWrapper.Right::after {
+  content: "";
+  position: relative;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid #fee400;
+  bottom: 0.3rem;
+  -webkit-filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
 }
 
 .ChatRoomContainer .InputTools {
