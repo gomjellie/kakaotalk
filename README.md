@@ -5,7 +5,7 @@
   <img width="40%" alt="Friends" src="https://user-images.githubusercontent.com/13645032/117103631-aabb0080-adb5-11eb-87fd-c424e821879e.png">
   <img width="40%" alt="Chats" src="https://user-images.githubusercontent.com/13645032/117103616-a2fb5c00-adb5-11eb-8e28-224adabb0cad.png">
   <img width="40%" alt="More" src="https://user-images.githubusercontent.com/13645032/117103639-adb5f100-adb5-11eb-8f58-a4138cab2436.png">
-  
+  <img width="40%" alt="More" src="https://user-images.githubusercontent.com/13645032/117658771-1b0ebb00-b1d6-11eb-9c4b-0c5a19371564.png">  
 </div>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
