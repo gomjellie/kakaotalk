@@ -984,6 +984,63 @@
   font-size: 0.8rem;
 }
 
+.ChatRoomContainer main.Chats .TimeDivider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 1rem;
+  width: 100%;
+  font-size: 0.7rem;
+  padding-top: 0.3rem;
+}
+
+.ChatRoomContainer main.Chats .TimeDivider div {
+  margin: 0rem 0.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ChatRoomContainer main.Chats .TimeDivider time {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.ChatRoomContainer main.Chats .Chatter {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2rem 1fr;
+      grid-template-columns: 2rem 1fr;
+  margin-left: 0.5rem;
+  height: 0.8rem;
+  padding-top: 0.5rem;
+}
+
+.ChatRoomContainer main.Chats .Chatter img {
+  width: 2.1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 40%;
+}
+
+.ChatRoomContainer main.Chats .Chatter .ChatterName {
+  color: #423630;
+  margin-left: 0.8rem;
+}
+
 .ChatRoomContainer main.Chats .BubbleWrapper {
   margin: 0.5rem 0;
   line-height: 0.9rem;
@@ -1003,12 +1060,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 0.5rem;
+  margin-left: 3rem;
 }
 
 .ChatRoomContainer main.Chats .BubbleWrapper.Left .Bubble {
   padding-right: 0.8rem;
-  margin-right: 4.5rem;
+  margin-right: 5rem;
   background-color: white;
 }
 
@@ -1050,7 +1107,7 @@
 
 .ChatRoomContainer main.Chats .BubbleWrapper.Right .Bubble {
   padding-left: 0.8rem;
-  margin-left: 4.5rem;
+  margin-left: 5rem;
   background-color: #fee400;
 }
 

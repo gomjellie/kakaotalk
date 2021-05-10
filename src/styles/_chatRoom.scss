@@ -117,6 +117,47 @@
     overflow-y: auto;
     font-size: 0.8rem;
 
+    .TimeDivider {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      height: 1rem;
+      width: 100%;
+      font-size: 0.7rem;
+      padding-top: 0.3rem;
+
+      div {
+        margin: 0rem 0.5rem;
+        flex: 1;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      time {
+        align-self: flex-start;
+        justify-self: center;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    .Chatter {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      margin-left: 0.5rem;
+      height: 0.8rem;
+      padding-top: $paddingDefault;
+
+      img {
+        width: 2.1rem;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 40%;
+      }
+      .ChatterName {
+        color: $brown;
+        margin-left: 0.8rem;
+      }
+    }
+
     .BubbleWrapper {
       margin: 0.5rem 0;
       line-height: 0.9rem;
@@ -126,11 +167,11 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        margin-left: 0.5rem;
+        margin-left: 3rem;
 
         .Bubble {
           padding-right: 0.8rem;
-          margin-right: 4.5rem;
+          margin-right: 5rem;
           background-color: white;
         }
 
@@ -141,7 +182,7 @@
         &.First::before {
           content: "";
           position: relative;
-          
+
           border-left: 0.5rem solid transparent;
           border-top: 0.5rem solid white;
           bottom: 0.3rem;
@@ -163,7 +204,7 @@
 
         .Bubble {
           padding-left: 0.8rem;
-          margin-left: 4.5rem;
+          margin-left: 5rem;
           background-color: $bubbleYellow;
         }
 

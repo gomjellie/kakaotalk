@@ -11,6 +11,8 @@ import BellImg from "assets/bell.png";
 import TalkDriveIcon from "assets/icons/TalkDrive.png";
 import HamburgerMenuIcon from "assets/icons/HamburgerMenu.png";
 
+import TimeDivider from "./TimeDivider";
+
 export default function ChatRoom({ match }) {
   const { id } = match.params;
 
@@ -50,11 +52,19 @@ export default function ChatRoom({ match }) {
         </div>
       </header>
       <main className="Chats">
+        <div className="Chatter">
+          <img src={DefaultProfileImg} alt="" />
+          <div className="ChatterName">일론머스크</div>
+        </div>
         <div className="BubbleWrapper Left First">
           <div className="Bubble">아</div>
         </div>
         <div className="BubbleWrapper Right First">
           <div className="Bubble">아</div>
+        </div>
+        <div className="Chatter">
+          <img src={DefaultProfileImg} alt="" />
+          <div className="ChatterName">일론머스크</div>
         </div>
         <div className="BubbleWrapper Left First">
           <div className="Bubble">
@@ -65,12 +75,21 @@ export default function ChatRoom({ match }) {
           <div className="Bubble">
             가나다라마바사아자차카타파하가나다라마바사아자차카타파하
           </div>
+        </div>
+        <TimeDivider date={new Date()} />
+        <div className="Chatter">
+          <img src={DefaultProfileImg} alt="" />
+          <div className="ChatterName">일론머스크</div>
         </div>
         <div className="BubbleWrapper Left First">
           <div className="Bubble">뭐하냐</div>
         </div>
         <div className="BubbleWrapper Right First">
           <div className="Bubble">뭐</div>
+        </div>
+        <div className="Chatter">
+          <img src={DefaultProfileImg} alt="" />
+          <div className="ChatterName">일론머스크</div>
         </div>
         <div className="BubbleWrapper Left First">
           <div className="Bubble">아니 뭐</div>
@@ -79,6 +98,10 @@ export default function ChatRoom({ match }) {
           <div className="Bubble">
             가나다라마바사아자차카타파하가나다라마바사아자차카타파하
           </div>
+        </div>
+        <div className="Chatter">
+          <img src={DefaultProfileImg} alt="" />
+          <div className="ChatterName">일론머스크</div>
         </div>
         <div className="BubbleWrapper Left First">
           <div className="Bubble">
