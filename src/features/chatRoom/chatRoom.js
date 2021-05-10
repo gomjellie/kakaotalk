@@ -50,41 +50,40 @@ export default function ChatRoom({ match }) {
         </div>
       </header>
       <main className="Chats">
-        <div className="BubbleWrapper Left">
+        <div className="BubbleWrapper Left First">
           <div className="Bubble">아</div>
         </div>
-        <div className="BubbleWrapper Right">
+        <div className="BubbleWrapper Right First">
           <div className="Bubble">아</div>
         </div>
-        <div className="BubbleWrapper Left">
+        <div className="BubbleWrapper Left First">
           <div className="Bubble">
             가나다라마바사아자차카타파하가나다라마바사아자차카타파하
           </div>
         </div>
-        <div className="BubbleWrapper Right">
+        <div className="BubbleWrapper Right First">
           <div className="Bubble">
             가나다라마바사아자차카타파하가나다라마바사아자차카타파하
           </div>
         </div>
-        <div className="BubbleWrapper Left">
+        <div className="BubbleWrapper Left First">
           <div className="Bubble">뭐하냐</div>
         </div>
-        <div className="BubbleWrapper Right">
+        <div className="BubbleWrapper Right First">
           <div className="Bubble">뭐</div>
         </div>
-        <div className="BubbleWrapper Left">
-          <div className="Bubble">
-            아니 뭐
-          </div>
+        <div className="BubbleWrapper Left First">
+          <div className="Bubble">아니 뭐</div>
         </div>
-        <div className="BubbleWrapper Right">
+        <div className="BubbleWrapper Right First">
           <div className="Bubble">
             가나다라마바사아자차카타파하가나다라마바사아자차카타파하
           </div>
         </div>
-        <div className="BubbleWrapper Left">
+        <div className="BubbleWrapper Left First">
           <div className="Bubble">
-          가나 다라마바사아자 차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하
+            가나 다라마바사아자
+            차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하
           </div>
         </div>
         <div className="BubbleWrapper Left">
@@ -92,10 +91,8 @@ export default function ChatRoom({ match }) {
             가나다라마바사아자차 카타파하가나다라마바사아자차카타파하
           </div>
         </div>
-        <div className="BubbleWrapper Right">
-          <div className="Bubble">
-            ㄹㅇㅋㅋ
-          </div>
+        <div className="BubbleWrapper Right First">
+          <div className="Bubble">ㄹㅇㅋㅋ</div>
         </div>
       </main>
       <div className="InputTools">

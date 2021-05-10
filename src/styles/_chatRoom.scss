@@ -118,7 +118,6 @@
     font-size: 0.8rem;
 
     .BubbleWrapper {
-      // margin-top: 1rem;
       margin: 0.5rem 0;
       line-height: 0.9rem;
 
@@ -127,21 +126,25 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        margin-left: 0.8rem;
+        margin-left: 0.5rem;
 
         .Bubble {
           padding-right: 0.8rem;
           margin-right: 4.5rem;
           background-color: white;
         }
-        &::before {
+
+        &:not(.First)::before {
+          content: "";
+          width: 0.5rem;
+        }
+        &.First::before {
           content: "";
           position: relative;
-
+          
           border-left: 0.5rem solid transparent;
           border-top: 0.5rem solid white;
           bottom: 0.3rem;
-          filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
         }
       }
 
@@ -156,14 +159,19 @@
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        margin-right: 0.8rem;
+        margin-right: 0.5rem;
 
         .Bubble {
           padding-left: 0.8rem;
           margin-left: 4.5rem;
           background-color: $bubbleYellow;
         }
-        &::after {
+
+        &:not(.First)::after {
+          content: "";
+          width: 0.5rem;
+        }
+        &.First::after {
           content: "";
           position: relative;
 

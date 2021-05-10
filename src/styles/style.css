@@ -1003,7 +1003,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 0.8rem;
+  margin-left: 0.5rem;
 }
 
 .ChatRoomContainer main.Chats .BubbleWrapper.Left .Bubble {
@@ -1012,14 +1012,17 @@
   background-color: white;
 }
 
-.ChatRoomContainer main.Chats .BubbleWrapper.Left::before {
+.ChatRoomContainer main.Chats .BubbleWrapper.Left:not(.First)::before {
+  content: "";
+  width: 0.5rem;
+}
+
+.ChatRoomContainer main.Chats .BubbleWrapper.Left.First::before {
   content: "";
   position: relative;
   border-left: 0.5rem solid transparent;
   border-top: 0.5rem solid white;
   bottom: 0.3rem;
-  -webkit-filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
-          filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
 }
 
 .ChatRoomContainer main.Chats .BubbleWrapper .Bubble {
@@ -1042,7 +1045,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 0.8rem;
+  margin-right: 0.5rem;
 }
 
 .ChatRoomContainer main.Chats .BubbleWrapper.Right .Bubble {
@@ -1051,7 +1054,12 @@
   background-color: #fee400;
 }
 
-.ChatRoomContainer main.Chats .BubbleWrapper.Right::after {
+.ChatRoomContainer main.Chats .BubbleWrapper.Right:not(.First)::after {
+  content: "";
+  width: 0.5rem;
+}
+
+.ChatRoomContainer main.Chats .BubbleWrapper.Right.First::after {
   content: "";
   position: relative;
   border-right: 0.5rem solid transparent;
