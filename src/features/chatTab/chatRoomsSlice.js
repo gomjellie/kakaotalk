@@ -27,7 +27,6 @@ const initialState = {
       message:
         "[결제] 알 리워드가 도착했습니다.\n\n도착한 결제 알 리워드는 아래 [받기] 버튼을 누르시면",
       currentTime: "2021-5-3 08:00:00",
-      Selected: true,
     },
     {
       title: "호찬김",
