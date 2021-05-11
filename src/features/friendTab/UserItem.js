@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import defaultProfileImg from 'assets/defaultProfile.png';
 
-export default function UserItem({nickname, avatar, stat, music}) {
+export default function UserItem({user, onClick}) {
+  const {nickname, avatar, stat, music} = user;
   return (
-    <div className="UserItem">
+    <div className={`UserItem ${user.selected ? 'Selected' : ''}`} onClick={onClick}>
       <img className="Avatar" src={avatar || defaultProfileImg} alt="" />
       <div className="Infos">
         <div className="LeftInfo">
@@ -18,3 +20,13 @@ export default function UserItem({nickname, avatar, stat, music}) {
     </div>
   )
 }
+
+UserItem.propTypes = {
+  user: PropTypes.object,
+  onClick: PropTypes.func,
+};
+
+UserItem.defaultProps = {
+  user: {},
+  onClick: () => {},
+};

@@ -130,6 +130,10 @@
       height: 3.4rem;
       padding: 0.2rem;
 
+      &.Selected {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
       &:hover {
         background-color: $gray;
       }

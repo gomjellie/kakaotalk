@@ -7,20 +7,24 @@ import Divider from "./Divider";
 import SectionTitle from "./SectionTitle";
 import UserItem from "./UserItem";
 import raloImg from "assets/ralo.png";
-import chanoImg from "assets/chano.png";
 import bieberImg from "assets/bieber.jpg";
-import duhanImg from "assets/duhan.jpeg";
-import umImg from "assets/um.jpeg";
-import pakaImg from "assets/paka.jpeg";
-import jihwanImg from "assets/jihwan.jpeg";
+// import chanoImg from "assets/chano.png";
+// import duhanImg from "assets/duhan.jpeg";
+// import umImg from "assets/um.jpeg";
+// import pakaImg from "assets/paka.jpeg";
+// import jihwanImg from "assets/jihwan.jpeg";
 import Sidebar from "components/Sidebar";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUsers, onClickUser } from "./friendTabSlice";
 
 export default function Friend() {
-  const user = {
+  const defaultUser = {
     nickname: "저스틴 비버",
     stat: "and i feel so holly holly",
     music: "Justin Bieber- Baby",
   };
+  const dispatch = useDispatch();
+  const users = useSelector(selectUsers);
 
   return (
     <>
@@ -39,17 +43,21 @@ export default function Friend() {
         <main className="Main">
           <SectionTitle title="My Default Profile" />
           <UserItem
-            avatar={raloImg}
-            nickname="김찬호"
-            stat="남탓금지, 나를믿고 팀을믿자"
-            music="Can't beat airman"
+            user={{
+              avatar: raloImg,
+              nickname: "김찬호",
+              stat: "남탓금지, 나를믿고 팀을믿자",
+              music: "Can't beat airman",
+            }}
           />
           <Divider />
           <SectionTitle title="Friends with Birthdays" />
           <UserItem
-            avatar={bieberImg}
-            nickname={user.nickname}
-            music={user.music}
+            user={{
+              avatar: bieberImg,
+              nickname: defaultUser.nickname,
+              music: defaultUser.music,
+            }}
           />
           <ChannelItem
             icon={birthdayImg}
@@ -61,7 +69,23 @@ export default function Friend() {
           <ChannelItem name="Channel" numItem={10} />
           <Divider />
           <SectionTitle title="Friends 389" />
-          <UserItem
+          {users.map((user, idx) => {
+            const prefix = "friend_tab_key";
+            return (
+              <UserItem
+                key={`${prefix}:${user.nickname}${idx}`}
+                // avatar={user.avatar}
+                // nickname={user.nickname}
+                // stat={user.stat}
+                // music={user.music}
+                user={user}
+                onClick={() => {
+                  dispatch(onClickUser({ nickname: user.nickname }));
+                }}
+              />
+            );
+          })}
+          {/* <UserItem
             avatar={chanoImg}
             nickname="랄로"
             stat="그렇게 됐습니다..."
@@ -101,7 +125,7 @@ export default function Friend() {
             nickname={user.nickname}
             stat={user.stat}
             music={user.music}
-          />
+          /> */}
         </main>
       </section>
     </>
