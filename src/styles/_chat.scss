@@ -71,6 +71,10 @@
       grid-template-columns: 3rem 1fr 4.2rem;
       height: 3.5rem;
       
+      &.Selected {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
       &:hover {
         background-color: $gray;
       }

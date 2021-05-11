@@ -56,36 +56,10 @@ app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });
 
-ipcMain.on('new-chat-window', (event) => {
-  const chatWin = new BrowserWindow({
-    show: false,
-    webPreferences: {
-      enableRemoteModule: true,
-      preload: `${__dirname}/preload.js`,
-    },
-    width: 375,
-    height: 680,
-    minHeight: 400,
-    titleBarStyle: 'hidden',
+ipcMain.on('toMain', (event, arg) => {
+  createWindow('ChatRoom', {
+    ...OPEN_CHAT_ROOM, title: arg.title,
   });
-
-  if (process.env.mode === "dev") {
-    chatWin.loadURL("http://localhost:3000");
-    chatWin.webContents.once('dom-ready', () => {
-      chatWin.webContents.send("fromMain", {
-        ...OPEN_CHAT_ROOM, roomNumber: 13,
-      });
-    });
-  } else {
-    chatWin.loadFile(`${path.join(__dirname, "../build/index.html")}`);
-  }
-
-  chatWin.once("ready-to-show", () => chatWin.show());
-  chatWin.on("closed", () => {
-    windows.delete(chatWin);
-  });
-
-  windows.add(chatWin);
 });
 
 const isCupertino = process.platform === "darwin";

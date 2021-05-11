@@ -508,6 +508,10 @@
   height: 3.5rem;
 }
 
+.ChatTabContainer main.Chat .ChatRoomItem.Selected {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .ChatTabContainer main.Chat .ChatRoomItem:hover {
   background-color: #f7f7f7;
 }
