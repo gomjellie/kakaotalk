@@ -7,9 +7,12 @@ import chatImg from "assets/chat.png";
 import userImg from "assets/user.png";
 
 import { useHistory } from "react-router-dom";
-// import useConstructor from 'hooks/useConstructor';
 
-export default function Sidebar({ path }) {
+interface Props {
+  path: string;
+}
+
+const Sidebar: React.FC<Props> = ({ path }) => {
   const history = useHistory();
 
   const pushFactory = useCallback(
@@ -51,4 +54,6 @@ export default function Sidebar({ path }) {
       <img width="25%" id="setting" src={settingImg} alt="" />
     </aside>
   );
-}
+};
+
+export default Sidebar;

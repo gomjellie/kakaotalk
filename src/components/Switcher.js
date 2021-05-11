@@ -3,7 +3,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import useConstructor from "hooks/useConstructor";
 
-export default function Sidebar() {
+export default function Switcher() {
   const history = useHistory();
 
   useConstructor(() => {

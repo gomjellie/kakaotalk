@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.extend.json",
   "compilerOptions": {
     "target": "es5",
     "baseUrl": "src",
@@ -19,10 +20,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": [
+      "@types/react",
+      "@types/react-dom",
+      "@types/react-redux",
+      "@types/react-router-dom"
+    ]
   },
   "include": [
-    "src"
+    "src",
+    "craco.config.js"
   ],
-  "exclude": ["node_modules", "build", "dist"]
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist"
+  ]
 }

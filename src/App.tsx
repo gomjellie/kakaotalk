@@ -3,13 +3,13 @@ import "./styles/style.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Switcher from "./components/Switcher";
-import FriendTab from "./features/friendTab/FriendTab";
-import ChatTab from "./features/chatTab/ChatTab";
-import MoreTab from "./features/moreTab/MoreTab";
-import ChatRoom from "./features/chatRoom/chatRoom";
+import Switcher from "@components/Switcher";
+import FriendTab from "@features/friendTab/FriendTab";
+import ChatTab from "@features/chatTab/ChatTab";
+import MoreTab from "@features/moreTab/MoreTab";
+import ChatRoom from "@features/chatRoom/chatRoom";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <Router>
