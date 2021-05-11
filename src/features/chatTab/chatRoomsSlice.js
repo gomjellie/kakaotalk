@@ -62,6 +62,7 @@ const chatRoomsSlice = createSlice({
       if (prevSelectedRoom === clickedRoom) {
         // 더블클릭
         window?.api?.send?.("toMain", { title: clickedRoom.title });
+        clickedRoom.selected = false;
       } else {
         if (prevSelectedRoom) prevSelectedRoom.selected = false;
         clickedRoom.selected = true;
