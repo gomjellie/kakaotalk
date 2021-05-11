@@ -4,7 +4,7 @@ import searchImg from "assets/search.png";
 import ChatRoomList from "./ChatRoomList";
 import Sidebar from "components/Sidebar";
 
-export default function ChatTab() {
+const ChatTab: React.FC = () => {
   return (
     <>
       <Sidebar path="/chat" />
@@ -28,4 +28,6 @@ export default function ChatTab() {
       </section>
     </>
   );
-}
+};
+
+export default ChatTab;

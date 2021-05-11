@@ -1,11 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import duhanJpeg from "assets/duhan.jpeg";
 import kakaoPayImg from "assets/kakaopay.png";
 import raloImg from "assets/ralo.png";
 import pepeGif from "assets/pepe.gif";
+import { RootState } from "app/store";
 
-const initialState = {
+type Room = {
+  avatar?: any;
+  title: string;
+  message?: string;
+  currentTime: Date | string;
+  numUnread?: number;
+  selected?: boolean;
+};
+
+const initialState: { rooms: Room[]; status: string } = {
   rooms: [
     {
       title: "김두한",
@@ -49,7 +59,7 @@ const chatRoomsSlice = createSlice({
   name: "chatRooms",
   initialState,
   reducers: {
-    onClickRoom(state, action) {
+    onClickRoom(state, action: PayloadAction<{ title: string }>) {
       const prevSelectedRoom = state.rooms.find((room) => {
         return room.selected === true;
       });
@@ -60,11 +70,11 @@ const chatRoomsSlice = createSlice({
 
       if (prevSelectedRoom === clickedRoom) {
         // 더블클릭
-        window?.api?.send?.("toMain", { title: clickedRoom.title });
-        clickedRoom.selected = false;
+        (window as any)?.api?.send?.("toMain", { title: clickedRoom?.title });
+        clickedRoom && (clickedRoom.selected = false);
       } else {
         if (prevSelectedRoom) prevSelectedRoom.selected = false;
-        clickedRoom.selected = true;
+        clickedRoom && (clickedRoom.selected = true);
       }
     },
   },
@@ -72,6 +82,8 @@ const chatRoomsSlice = createSlice({
 
 export default chatRoomsSlice.reducer;
 
-export const selectChatRooms = (state) => state.chatRooms.rooms;
+export const selectChatRooms = (state: RootState) => state.chatRooms.rooms;
 
 export const { onClickRoom } = chatRoomsSlice.actions;
+
+export type { Room };

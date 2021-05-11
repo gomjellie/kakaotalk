@@ -3,10 +3,14 @@ import counterReducer from 'features/counter/counterSlice';
 import chatRoomReducer from 'features/chatTab/chatRoomsSlice';
 import friendTabReducer from 'features/friendTab/friendTabSlice';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     counter: counterReducer,
     chatRooms: chatRoomReducer,
     friendTab: friendTabReducer,
   },
 });
+
+export type RootState = ReturnType<typeof store.getState>
+
+export { store };

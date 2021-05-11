@@ -15,17 +15,11 @@ export default function ChatRoomList() {
             key={chatRoom.title}
             chatRoom={chatRoom}
             onClick={() => {
-              dispatch(onClickRoom({title: chatRoom.title}));
+              dispatch(onClickRoom({ title: chatRoom.title }));
             }}
           />
         );
       })}
-      <ChatRoomItem />
-      <ChatRoomItem />
-      <ChatRoomItem />
-      <ChatRoomItem />
-      <ChatRoomItem />
-      <ChatRoomItem />
     </div>
   );
 }
